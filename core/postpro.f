@@ -1655,8 +1655,10 @@ c-----------------------------------------------------------------------
       ierr = 0
       if(nid.eq.0) then
         write(6,*) 'reading history points'
-        open(50,file=hisfle,status='old',err=100)
-        read(50,*,err=100) npoints
+c        open(50,file='hpts.in',status='old',err=100)
+        open(50,file=hisfle,err=100,access='append')
+        open(51,file='hpts.in',status='old',err=100)
+        read(51,*,err=100) npoints
         goto 101
  100    ierr = 1
  101    continue
@@ -1693,7 +1695,7 @@ c-----------------------------------------------------------------------
         do ipass = 1,npass
            if(ipass.eq.npass) i1 = n0
            do i = 1,i1
-              read(50,*) (buffer(j,i),j=1,ndim) 
+              read(51,*) (buffer(j,i),j=1,ndim) 
            enddo
            if(ipass.lt.npass)call csend(ipass,buffer,len,ipass,0)
         enddo

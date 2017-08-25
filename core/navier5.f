@@ -3815,7 +3815,6 @@ c     and that lelx,lely,lelz are defined to be >= nelx,nely,nelz
 
       call z_profile          (ua,u,w1,w2)
       call z_profile_transpose(ub,ua) ! distribute ua to each z-plane
-
       n = nx1*ny1*nz1*nelv
       call sub2(u,ub,n)
 

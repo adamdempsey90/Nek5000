@@ -4,7 +4,7 @@
 #-------------------------------------------------------------------------------
 
 # source path 
-SOURCE_ROOT="$HOME/Nek5000" 
+SOURCE_ROOT="$NEK_HOME" 
 SOURCE_ROOT_GSLIB="$SOURCE_ROOT/3rd_party/gslib/src" 
 
 # Fortran/C compiler
@@ -14,12 +14,14 @@ CC="mpicc"
 # pre-processor list (set to "?" to get a list of available symbols)
 PPLIST="" 
 
+
 #-------------------------------------------------------------------------------
 # WHAT FOLLOWS ARE OPTIONAL SETTINGS
 #-------------------------------------------------------------------------------
 
 # optional compiler flags
-#FFLAGS=""
+FFLAGS="-mcmodel=medium"
+CLAGS="-mcmodel=medium"
 #CFLAGS=""
 
 # optional linking flags
