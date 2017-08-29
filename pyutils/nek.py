@@ -619,16 +619,12 @@ class Zavg(Parameters):
             line, = ax.plot(self.z,avg,**kargs)
             ax.fill_between(self.z, avg-st, avg+st, facecolor=line._color,alpha=.1)
         else:
-            print(i,type(i))
             if i=='all':
                 i  = range(0,self.nt)
-                print(i,'all')
             if type(i) == int:
                 i = [i]
-                print('List', i)
 
             for ii in i:
-                print(ii)
                 ax.plot(self.z,(q[:,ii]-shift)/norm,**kargs)
 
         if first:
