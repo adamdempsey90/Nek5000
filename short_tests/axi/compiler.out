@@ -1,0 +1,2104 @@
+makenek - automatic build tool for Nek5000
+generating makefile ...
+‘axi.usr’ -> ‘axi.f’
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/drive.f -o obj/drive.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/drive1.f -o obj/drive1.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/drive2.f -o obj/drive2.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/plan5.f -o obj/plan5.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/plan4.f -o obj/plan4.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/bdry.f -o obj/bdry.o
+/projects/p20850/amd616/Nek5000/core/plan4.f:46.20:
+
+         call sumab(vx_e,vx,vxlag,ntot1,ab,nab)                         
+                    1
+Warning: Rank mismatch in argument 'v' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/plan4.f:47.20:
+
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/coef.f -o obj/coef.o
+         call sumab(vy_e,vy,vylag,ntot1,ab,nab)                         
+                    1
+Warning: Rank mismatch in argument 'v' at (1) (scalar and rank-4)
+/projects/p20850/amd616/Nek5000/core/plan4.f:48.30:
+
+         if (if3d) call sumab(vz_e,vz,vzlag,ntot1,ab,nab)               
+                              1
+Warning: Rank mismatch in argument 'v' at (1) (scalar and rank-4)
+/projects/p20850/amd616/Nek5000/core/plan4.f:161.20:
+
+      common /scruz/         sij (lx1*ly1*lz1,6,lelv)                   
+                    1
+Warning: Named COMMON block 'scruz' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/plan4.f:21.20:
+
+      COMMON /SCRNS/ RES1  (LX1,LY1,LZ1,LELV)                           
+                    1
+Warning: Named COMMON block 'scrns' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/bdry.f:1883.20:
+
+      COMMON /SCRMG/ V1(LX1,LY1,LZ1,LELV)                               
+                    1
+Warning: Named COMMON block 'scrmg' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/coef.f:1651.22:
+
+      call out_fld_el(x,e,'XQ')                                         
+                      1
+Warning: Actual argument contains too few elements for dummy argument 'x' (1/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/coef.f:1652.22:
+
+      call out_fld_el(y,e,'YQ')                                         
+                      1
+Warning: Actual argument contains too few elements for dummy argument 'x' (1/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/coef.f:1653.22:
+
+      call out_fld_el(z,e,'ZQ')                                         
+                      1
+Warning: Actual argument contains too few elements for dummy argument 'x' (1/18144) at (1)
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/conduct.f -o obj/conduct.o
+/projects/p20850/amd616/Nek5000/core/coef.f:1211.20:
+
+      COMMON /CTMP0/ C  (LX1,LY1,LZ1,LELT)                              
+                    1
+Warning: Named COMMON block 'ctmp0' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/coef.f:1207.20:
+
+      COMMON /CTMP1/ ZSM1(LX1,LY1,LZ1,LELT)                             
+                    1
+Warning: Named COMMON block 'ctmp1' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/bdry.f:611.20:
+
+      COMMON /SCRUZ/ TMP1(LX1,LY1,LZ1,LELV)                             
+                    1
+Warning: Named COMMON block 'scruz' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/conduct.f:601.22:
+
+      call fwght  (qs,mask)  ! qs is work array                         
+                      1
+Warning: Actual argument contains too few elements for dummy argument 'mult' (1/36) at (1)
+/projects/p20850/amd616/Nek5000/core/conduct.f:455.20:
+
+      common /scruz/ ta(lx1,ly1,lz1,lelt)                               
+                    1
+Warning: Named COMMON block 'scruz' at (1) shall be of the same size
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/connect1.f -o obj/connect1.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/connect2.f -o obj/connect2.o
+/projects/p20850/amd616/Nek5000/core/connect2.f:71.34:
+
+                call cscan(string,'MESH DATA',9)                        
+                                  1
+Warning: Character length of actual argument shorter than of dummy argument 'key' (9/132) at (1)
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/dssum.f -o obj/dssum.o
+/projects/p20850/amd616/Nek5000/core/connect2.f:1543.20:
+
+      common /scrns/ tc(lx1,ly1,lz1,lelt),td(lx1,ly1,lz1,lelt)          
+                    1
+Warning: Named COMMON block 'scrns' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/connect2.f:1773.20:
+
+      COMMON /CTMP0/ VO(LELT),XYZI(3,LELT),CG(3,LELT)                   
+                    1
+Warning: Named COMMON block 'ctmp0' at (1) shall be of the same size
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/edgec.f -o obj/edgec.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/eigsolv.f -o obj/eigsolv.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/gauss.f -o obj/gauss.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/genxyz.f -o obj/genxyz.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/navier1.f -o obj/navier1.o
+/projects/p20850/amd616/Nek5000/core/genxyz.f:1293.20:
+
+      common /ctmp0/ xcb(2,2,2),ycb(2,2,2),zcb(2,2,2),w(ldw)            
+                    1
+Warning: Named COMMON block 'ctmp0' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/genxyz.f:1344.20:
+
+      common /ctmp0/ w(ldw,2),zg(3)                                     
+                    1
+Warning: Named COMMON block 'ctmp0' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/genxyz.f:1354.20:
+
+      common /cxyzl/ zgml(lx1,3),jx (lx1*3),jy (lx1*3),jz (lx1*3)       
+                    1
+Warning: Named COMMON block 'cxyzl' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/genxyz.f:329.21:
+
+      COMMON /SRFCEL/ SUCCES                                            
+                     1
+Warning: Named COMMON block 'srfcel' at (1) shall be of the same size
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/makeq.f -o obj/makeq.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/navier0.f -o obj/navier0.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/navier2.f -o obj/navier2.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/navier3.f -o obj/navier3.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/navier4.f -o obj/navier4.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/prepost.f -o obj/prepost.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/speclib.f -o obj/speclib.o
+/projects/p20850/amd616/Nek5000/core/navier1.f:2739.27:
+
+         call rotate_cyc  (a,b,c,1)                                     
+                           1
+Warning: Actual argument contains too few elements for dummy argument 'r1' (1/36) at (1)
+/projects/p20850/amd616/Nek5000/core/navier1.f:2741.27:
+
+         call rotate_cyc  (a,b,c,0)                                     
+                           1
+Warning: Actual argument contains too few elements for dummy argument 'r1' (1/36) at (1)
+/projects/p20850/amd616/Nek5000/core/navier1.f:4233.23:
+
+      call multd (work,inpx,rxm2,sxm2,txm2,1,iflg)                      
+                       1
+Warning: Actual argument contains too few elements for dummy argument 'x' (36/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/navier1.f:4235.23:
+
+      call multd (work,inpy,rym2,sym2,tym2,2,iflg)                      
+                       1
+Warning: Actual argument contains too few elements for dummy argument 'x' (36/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/navier1.f:4238.26:
+
+         call multd (work,inpz,rzm2,szm2,tzm2,3,iflg)                   
+                          1
+Warning: Actual argument contains too few elements for dummy argument 'x' (36/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/navier1.f:3357.4:
+
+ 101     call conv1 (conv,fi)  !    use the convective form             
+    1
+/projects/p20850/amd616/Nek5000/core/navier1.f:3342.72:
+
+      if (.not. ifdeal(ifield)) goto 101                                
+                                                                        2
+Warning: Label at (1) is not in the same block as the GOTO statement at (2)
+/projects/p20850/amd616/Nek5000/core/navier1.f:3129.56:
+
+            call specmp(md(1,1,1,ie),nd,m1(1,1,1,ie),n1,im1d,im1dt,w)   
+                                                        1
+Warning: Rank mismatch in argument 'ba' at (1) (scalar and rank-2)
+/projects/p20850/amd616/Nek5000/core/navier1.f:3133.56:
+
+            call specmp(m1(1,1,1,ie),n1,md(1,1,1,ie),nd,imd1,imd1t,w)   
+                                                        1
+Warning: Rank mismatch in argument 'ba' at (1) (scalar and rank-2)
+/projects/p20850/amd616/Nek5000/core/navier1.f:3160.52:
+
+        call specmp(m1(1,1,1,ie),n1,md(1,1,1,ie),nd,pmd1,pmd1t,w)       
+                                                    1
+Warning: Rank mismatch in argument 'ba' at (1) (scalar and rank-2)
+/projects/p20850/amd616/Nek5000/core/navier1.f:3423.26:
+
+      call mapwp(dfid,nxd,dfi,nx1,-1)                                   
+                          1
+Warning: Actual argument contains too few elements for dummy argument 'm1' (36/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/navier1.f:4259.17:
+
+      call cdtp (outx,inpfld,rxm2,sxm2,txm2,1)                          
+                 1
+Warning: Actual argument contains too few elements for dummy argument 'dtx' (36/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/navier1.f:4260.17:
+
+      call cdtp (outy,inpfld,rym2,sym2,tym2,2)                          
+                 1
+Warning: Actual argument contains too few elements for dummy argument 'dtx' (36/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/navier1.f:4262.20:
+
+     $   call cdtp (outz,inpfld,rzm2,szm2,tzm2,3)                       
+                    1
+Warning: Actual argument contains too few elements for dummy argument 'dtx' (36/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/navier4.f:918.38:
+
+     $   (m,mmx,ixb,ibb,ix,ib,ih1,ih2,ivar,n,ifvec,name6)               
+                                      1
+Warning: Actual argument contains too few elements for dummy argument 'ivar' (1/10) at (1)
+/projects/p20850/amd616/Nek5000/core/navier1.f:331.18:
+
+      CALL MULTD (OUT1,INP,RXM2,SXM2,TXM2,1,iflg)                       
+                  1
+Warning: Actual argument contains too few elements for dummy argument 'dx' (36/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/navier1.f:332.18:
+
+      CALL MULTD (OUT2,INP,RYM2,SYM2,TYM2,2,iflg)                       
+                  1
+Warning: Actual argument contains too few elements for dummy argument 'dx' (36/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/navier1.f:334.18:
+
+     $CALL MULTD (OUT3,INP,RZM2,SZM2,TZM2,3,iflg)                       
+                  1
+Warning: Actual argument contains too few elements for dummy argument 'dx' (36/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/navier1.f:1907.33:
+
+         CALL BDSYS (BDMAT,BDRHS,DTBD,NBD,NDIM)                         
+                                 1
+Warning: Actual argument contains too few elements for dummy argument 'dt' (1/9) at (1)
+/projects/p20850/amd616/Nek5000/core/navier4.f:1149.53:
+
+      call proj_get_ivar(m,mmx,ixb,ibb,ix,ib,ih1,ih2,ivar,n,ifvec,name6)
+                                                     1
+Warning: Actual argument contains too few elements for dummy argument 'ivar' (1/10) at (1)
+/projects/p20850/amd616/Nek5000/core/navier4.f:1157.11:
+
+      ivar(2) = m ! Update number of saved vectors                      
+           1
+Warning: Array reference at (1) is out of bounds (2 > 1) in dimension 1
+/projects/p20850/amd616/Nek5000/core/navier1.f:2011.27:
+
+      CALL VELCHAR (VX,VXN,VXLAG,NBD,TAU,DTLAG)                         
+                           1
+Warning: Actual argument contains too few elements for dummy argument 'vlag' (36288/163296) at (1)
+/projects/p20850/amd616/Nek5000/core/navier1.f:2012.27:
+
+      CALL VELCHAR (VY,VYN,VYLAG,NBD,TAU,DTLAG)                         
+                           1
+Warning: Actual argument contains too few elements for dummy argument 'vlag' (36288/163296) at (1)
+/projects/p20850/amd616/Nek5000/core/navier1.f:2014.27:
+
+     $CALL VELCHAR (VZ,VZN,VZLAG,NBD,TAU,DTLAG)                         
+                           1
+Warning: Actual argument contains too few elements for dummy argument 'vlag' (36288/163296) at (1)
+/projects/p20850/amd616/Nek5000/core/navier4.f:1295.26:
+
+        call hmhzpf (name,u,r,h1,h2,mask,mult,imsh,tol,maxi,isd,binvm1) 
+                          1
+Warning: Actual argument contains too few elements for dummy argument 'u' (1/36) at (1)
+/projects/p20850/amd616/Nek5000/core/navier4.f:1297.26:
+
+        call hmhzpf (name,u,r,h1,h2,mask,mult,imsh,tol,maxi,isd,bintm1) 
+                          1
+Warning: Actual argument contains too few elements for dummy argument 'u' (1/36) at (1)
+/projects/p20850/amd616/Nek5000/core/navier1.f:2765.30:
+
+            call rotate_cyc  (a,b,c,1)                                  
+                              1
+Warning: Actual argument contains too few elements for dummy argument 'r1' (1/36) at (1)
+/projects/p20850/amd616/Nek5000/core/navier1.f:2767.30:
+
+            call rotate_cyc  (a,b,c,0)                                  
+                              1
+Warning: Actual argument contains too few elements for dummy argument 'r1' (1/36) at (1)
+/projects/p20850/amd616/Nek5000/core/navier1.f:3693.23:
+
+      call velchar (vx,vxn,vxlag,nbd,tau,dtlag)                         
+                       1
+Warning: Actual argument contains too few elements for dummy argument 'vn' (1/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/navier1.f:3694.23:
+
+      call velchar (vy,vyn,vylag,nbd,tau,dtlag)                         
+                       1
+Warning: Actual argument contains too few elements for dummy argument 'vn' (1/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/navier1.f:3696.23:
+
+     $call velchar (vz,vzn,vzlag,nbd,tau,dtlag)                         
+                       1
+Warning: Actual argument contains too few elements for dummy argument 'vn' (1/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/navier1.f:3777.22:
+
+      call conv1rk   (du,dv,dw,u,v,w)                                   
+                      1
+Warning: Actual argument contains too few elements for dummy argument 'du' (1/36) at (1)
+/projects/p20850/amd616/Nek5000/core/navier1.f:3977.22:
+
+      call conv1rk2  (du,dv,dw,u,v,w,cu,cv,cw,beta,wk)                  
+                      1
+Warning: Actual argument contains too few elements for dummy argument 'du' (1/36) at (1)
+/projects/p20850/amd616/Nek5000/core/navier1.f:4111.20:
+
+      CALL VELINIT (VEL1,VEL2,VEL3,ILAG)                                
+                    1
+Warning: Actual argument contains too few elements for dummy argument 'vel1' (36/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/navier4.f:216.21:
+
+      COMMON /ORTHOX/ Pbar(LTOT2),Pnew(LTOT2),Pbrr(ltot2)               
+                     1
+Warning: Named COMMON block 'orthox' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/navier1.f:2127.20:
+
+      COMMON /CTMP1/ WORK   (LXYZ1,LELT)                                
+                    1
+Warning: Named COMMON block 'ctmp1' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/navier1.f:3306.20:
+
+      COMMON /CTMP1/  MFI    (LX1,LY1,LZ1,LELV)                         
+                    1
+Warning: Named COMMON block 'ctmp1' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/navier1.f:4228.20:
+
+      common /ctmp0/ work (lx2,ly2,lz2,lelv)                            
+                    1
+Warning: Named COMMON block 'ctmp0' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/navier1.f:1068.21:
+
+      COMMON /CPRINT/ IFPRINT, IFHZPC                                   
+                     1
+Warning: Named COMMON block 'cprint' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/navier1.f:1184.20:
+
+      COMMON /CTMP0/ TA  (LX2,LY2,LZ2,LELV)                             
+                    1
+Warning: Named COMMON block 'ctmp0' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/navier1.f:2352.20:
+
+      COMMON /SCRMG/ TB1   (LX1,LY1,LZ1,LELV)                           
+                    1
+Warning: Named COMMON block 'scrmg' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/navier1.f:2345.20:
+
+      COMMON /SCRNS/ RESV1 (LX1,LY1,LZ1,LELV)                           
+                    1
+Warning: Named COMMON block 'scrns' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/prepost.f:1101.37:
+
+      iprefix        = i_find_prefix(prefix,99)                         
+                                     1
+Warning: Rank mismatch in argument 'prefix' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/prepost.f:1113.31:
+
+      call restart_nfld( nfld, prefix ) ! Check for Restart option.     
+                               1
+Warning: Rank mismatch in argument 'prefix' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/prepost.f:1909.25:
+
+         do k = 1,ldimt-1                                               
+                         1
+Warning: DO loop at (1) will be executed zero times
+/projects/p20850/amd616/Nek5000/core/prepost.f:938.20:
+
+      do k=1,ldimt-1                                                    
+                    1
+Warning: DO loop at (1) will be executed zero times
+/projects/p20850/amd616/Nek5000/core/prepost.f:983.23:
+
+         do k=1,ldimt-1                                                 
+                       1
+Warning: DO loop at (1) will be executed zero times
+/projects/p20850/amd616/Nek5000/core/prepost.f:380.28:
+
+            do k = 1,ldimt-1                                            
+                            1
+Warning: DO loop at (1) will be executed zero times
+/projects/p20850/amd616/Nek5000/core/prepost.f:394.37:
+
+      if (nid.eq.0) call dump_header(excode,p66,ierr)                   
+                                     1
+Warning: Rank mismatch in argument 'excodein' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/navier1.f:3381.20:
+
+      COMMON /CTMP0/ TA1  (LX1,LY1,LZ1,LELV)                            
+                    1
+Warning: Named COMMON block 'ctmp0' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/prepost.f:1444.22:
+
+      do i = 1,ldimt-1                                                  
+                      1
+Warning: DO loop at (1) will be executed zero times
+/projects/p20850/amd616/Nek5000/core/prepost.f:1453.22:
+
+      do i = 1,ldimt-1                                                  
+                      1
+Warning: DO loop at (1) will be executed zero times
+/projects/p20850/amd616/Nek5000/core/prepost.f:1393.32:
+
+      call outpost2(v1,v2,v3,vp,vt,itmp,name3)                          
+                                1
+Warning: Actual argument contains too few elements for dummy argument 'vt' (1/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/prepost.f:845.20:
+
+      common /SCRUZ/  ur1(lxo*lxo*lxo*lelt)                             
+                    1
+Warning: Named COMMON block 'scruz' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/navier1.f:4093.20:
+
+      COMMON /CTMP1/ RKX1  (LX1,LY1,LZ1,LELV)                           
+                    1
+Warning: Named COMMON block 'ctmp1' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/prepost.f:1735.20:
+
+      common /SCRNS/ u4(2+lxo*lxo*lxo*6*lelt)                           
+                    1
+Warning: Named COMMON block 'scrns' at (1) shall be of the same size
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/map2.f -o obj/map2.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/turb.f -o obj/turb.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/mvmesh.f -o obj/mvmesh.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/ic.f -o obj/ic.o
+/projects/p20850/amd616/Nek5000/core/turb.f:332.20:
+
+      COMMON /SCRCH/ TA(LX1,LY1,LZ1,LELV)                               
+                    1
+Warning: Named COMMON block 'scrch' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/turb.f:249.20:
+
+      COMMON /SCRCH/ TA(LX1,LY1,LZ1,LELV),TB(LX1,LY1,LZ1,LELV)          
+                    1
+Warning: Named COMMON block 'scrch' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/turb.f:578.20:
+
+      COMMON /SCRUZ/ V1(LX1,LY1,LZ1,LELV)                               
+                    1
+Warning: Named COMMON block 'scruz' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/mvmesh.f:87.20:
+
+      COMMON /SCRUZ/ FM1(LX1,LY1,LZ1,LELT)                              
+                    1
+Warning: Named COMMON block 'scruz' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/ic.f:426.24:
+
+         IF (INDX1(LINE,'PRESOLV',7).NE.0) THEN                         
+                        1
+Warning: Character length of actual argument shorter than of dummy argument 's2' (7/132) at (1)
+/projects/p20850/amd616/Nek5000/core/ic.f:1464.15:
+
+      I1=INDX1(S1,S2,L2)                                                
+               1
+Warning: Rank mismatch in argument 's1' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/ic.f:430.34:
+
+            CALL CSPLIT(CDUM,LINE,' ',1)                                
+                                  1
+Warning: Character length of actual argument shorter than of dummy argument 's2' (1/132) at (1)
+/projects/p20850/amd616/Nek5000/core/ic.f:447.33:
+
+               IF (INDX_CUT(LINE,'U',1).NE.0) THEN                      
+                                 1
+Warning: Actual argument contains too few elements for dummy argument 's2' (1/132) at (1)
+/projects/p20850/amd616/Nek5000/core/ic.f:452.33:
+
+               IF (INDX_CUT(LINE,'T',1).NE.0) THEN                      
+                                 1
+Warning: Actual argument contains too few elements for dummy argument 's2' (1/132) at (1)
+/projects/p20850/amd616/Nek5000/core/ic.f:460.36:
+
+                  IF (INDX_CUT(LINE,S2,2).NE.0) THEN                    
+                                    1
+Warning: Actual argument contains too few elements for dummy argument 's2' (2/132) at (1)
+/projects/p20850/amd616/Nek5000/core/ic.f:1083.30:
+
+      call csplit(fname,rsopt,' ',1)                                    
+                              1
+Warning: Character length of actual argument shorter than of dummy argument 's2' (1/132) at (1)
+/projects/p20850/amd616/Nek5000/core/ic.f:1085.22:
+
+      if (indx1(fname,'.',1).eq.0) then                                 
+                      1
+Warning: Character length of actual argument shorter than of dummy argument 's2' (1/132) at (1)
+/projects/p20850/amd616/Nek5000/core/ic.f:1102.24:
+
+      do 100 i=1,ldimt-1                                                
+                        1
+Warning: DO loop at (1) will be executed zero times
+/projects/p20850/amd616/Nek5000/core/ic.f:1120.28:
+
+         ITO=INDX_CUT(RSOPT,'TIME',4)                                   
+                            1
+Warning: Actual argument contains too few elements for dummy argument 's2' (4/132) at (1)
+/projects/p20850/amd616/Nek5000/core/ic.f:1124.31:
+
+            IT1=INDX_CUT(RSOPT,'=',1)                                   
+                               1
+Warning: Actual argument contains too few elements for dummy argument 's2' (1/132) at (1)
+/projects/p20850/amd616/Nek5000/core/ic.f:1799.23:
+
+      IFLDW=INDX1(WORK,' ',1)-1                                         
+                       1
+Warning: Character length of actual argument shorter than of dummy argument 's2' (1/132) at (1)
+/projects/p20850/amd616/Nek5000/core/ic.f:1136.27:
+
+            IT1=INDX1(LINE,' ',1)                                       
+                           1
+Warning: Character length of actual argument shorter than of dummy argument 's2' (1/132) at (1)
+/projects/p20850/amd616/Nek5000/core/ic.f:1143.28:
+
+         IXO=INDX_CUT(RSOPT,'X',1)                                      
+                            1
+Warning: Actual argument contains too few elements for dummy argument 's2' (1/132) at (1)
+/projects/p20850/amd616/Nek5000/core/ic.f:1150.28:
+
+         IVO=INDX_CUT(RSOPT,'U',1)                                      
+                            1
+Warning: Actual argument contains too few elements for dummy argument 's2' (1/132) at (1)
+/projects/p20850/amd616/Nek5000/core/ic.f:1157.28:
+
+         IPO=INDX_CUT(RSOPT,'P',1)                                      
+                            1
+Warning: Actual argument contains too few elements for dummy argument 's2' (1/132) at (1)
+/projects/p20850/amd616/Nek5000/core/ic.f:1163.28:
+
+         ITO=INDX_CUT(RSOPT,'T',1)                                      
+                            1
+Warning: Actual argument contains too few elements for dummy argument 's2' (1/132) at (1)
+/projects/p20850/amd616/Nek5000/core/ic.f:1171.31:
+
+            ipo=indx_cut(rsopt,s2,2)                                    
+                               1
+Warning: Actual argument contains too few elements for dummy argument 's2' (2/132) at (1)
+/projects/p20850/amd616/Nek5000/core/ic.f:1169.27:
+
+         do 300 i=1,ldimt-1                                             
+                           1
+Warning: DO loop at (1) will be executed zero times
+/projects/p20850/amd616/Nek5000/core/ic.f:1200.27:
+
+         do 410 i=1,ldimt-1                                             
+                           1
+Warning: DO loop at (1) will be executed zero times
+/projects/p20850/amd616/Nek5000/core/ic.f:2612.23:
+
+            i1 = indx1(fname,eight,k)                                   
+                       1
+Warning: Rank mismatch in argument 's1' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/ic.f:2312.24:
+
+      if (indx2(hdr,132,'#std',4).eq.1) then                            
+                        1
+Warning: Character length of actual argument shorter than of dummy argument 's2' (4/132) at (1)
+/projects/p20850/amd616/Nek5000/core/ic.f:2354.20:
+
+      do k=1,ldimt-1                                                    
+                    1
+Warning: DO loop at (1) will be executed zero times
+/projects/p20850/amd616/Nek5000/core/ic.f:2402.34:
+
+      call parse_std_hdr_2006(hdr,rdcode)  ! try the original header for
+                                  1
+Warning: Actual argument contains too few elements for dummy argument 'rlcode' (10/20) at (1)
+/projects/p20850/amd616/Nek5000/core/ic.f:2289.28:
+
+               call mapab4r(u(1,ei),wk(l        ),nxr,1)                
+                            1
+Warning: Type mismatch in argument 'x' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/ic.f:2290.28:
+
+               call mapab4r(v(1,ei),wk(l+  nxyzw),nxr,1)                
+                            1
+Warning: Type mismatch in argument 'x' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/ic.f:2292.28:
+
+     $         call mapab4r(w(1,e),wk(l+2*nxyzw),nxr,1)                 
+                            1
+Warning: Type mismatch in argument 'x' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/ic.f:2294.36:
+
+               call mapab  (u(1,ei),wk(l        ),nxr,1)                
+                                    1
+Warning: Type mismatch in argument 'y' at (1); passed REAL(4) to REAL(8)
+/projects/p20850/amd616/Nek5000/core/ic.f:2295.36:
+
+               call mapab  (v(1,ei),wk(l+  nxyzw),nxr,1)                
+                                    1
+Warning: Type mismatch in argument 'y' at (1); passed REAL(4) to REAL(8)
+/projects/p20850/amd616/Nek5000/core/ic.f:2297.36:
+
+     $         call mapab  (w(1,ei),wk(l+2*nxyzw),nxr,1)                
+                                    1
+Warning: Type mismatch in argument 'y' at (1); passed REAL(4) to REAL(8)
+/projects/p20850/amd616/Nek5000/core/ic.f:2500.38:
+
+            call mfi_getv(xm1,ym1,zm1,wk,lwk,.false.)                   
+                                      1
+Warning: Type mismatch in argument 'wk' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/ic.f:2502.38:
+
+            call mfi_getv(xm1,ym1,zm1,wk,lwk,.true.)                    
+                                      1
+Warning: Type mismatch in argument 'wk' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/ic.f:2513.38:
+
+               call mfi_getv(bx,by,bz,wk,lwk,.false.)                   
+                                      1
+Warning: Type mismatch in argument 'wk' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/ic.f:2516.38:
+
+               call mfi_getv(vx,vy,vz,wk,lwk,.false.)                   
+                                      1
+Warning: Type mismatch in argument 'wk' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/ic.f:2519.35:
+
+            call mfi_getv(vx,vy,vz,wk,lwk,.true.)                       
+                                   1
+Warning: Type mismatch in argument 'wk' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/ic.f:2140.28:
+
+               call mapab4r(u(1,ei),wk(l        ),nxr,1)                
+                            1
+Warning: Type mismatch in argument 'x' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/ic.f:2142.36:
+
+               call mapab  (u(1,ei),wk(l        ),nxr,1)                
+                                    1
+Warning: Type mismatch in argument 'y' at (1); passed REAL(4) to REAL(8)
+/projects/p20850/amd616/Nek5000/core/ic.f:2529.30:
+
+            call mfi_gets(pm1,wk,lwk,.false.)                           
+                              1
+Warning: Type mismatch in argument 'wk' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/ic.f:2531.30:
+
+            call mfi_gets(pm1,wk,lwk,.true.)                            
+                              1
+Warning: Type mismatch in argument 'wk' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/ic.f:2541.28:
+
+            call mfi_gets(t,wk,lwk,.false.)                             
+                            1
+Warning: Type mismatch in argument 'wk' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/ic.f:2543.28:
+
+            call mfi_gets(t,wk,lwk,.true.)                              
+                            1
+Warning: Type mismatch in argument 'wk' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/ic.f:2555.44:
+
+               call mfi_gets(t(1,1,1,1,k+1),wk,lwk,.false.)             
+                                            1
+Warning: Type mismatch in argument 'wk' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/ic.f:2557.44:
+
+               call mfi_gets(t(1,1,1,1,k+1),wk,lwk,.true.)              
+                                            1
+Warning: Type mismatch in argument 'wk' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/ic.f:2549.20:
+
+      do k=1,ldimt-1                                                    
+                    1
+Warning: DO loop at (1) will be executed zero times
+/projects/p20850/amd616/Nek5000/core/ic.f:1416.27:
+
+      i1_from_char = indx2(n10,10,s1,1)-1                               
+                           1
+Warning: Character length of actual argument shorter than of dummy argument 's1' (10/132) at (1)
+/projects/p20850/amd616/Nek5000/core/ic.f:1243.25:
+
+            call mapab4r(sdump(1,ieg),tdump,nxr,1)                      
+                         1
+Warning: Type mismatch in argument 'x' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/ic.f:1277.28:
+
+               call mapab4r(sdump(1,ie),tdump,nxr,1)                    
+                            1
+Warning: Type mismatch in argument 'x' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/ic.f:956.38:
+
+     $            call copy(t(1,1,1,1,2),sdmp2(1,1),ntott)              
+                                      1
+Warning: Array reference at (1) is out of bounds (2 > 1) in dimension 5
+/projects/p20850/amd616/Nek5000/core/ic.f:310.20:
+
+      do i=1,ldimt-1                                                    
+                    1
+Warning: DO loop at (1) will be executed zero times
+/projects/p20850/amd616/Nek5000/core/ic.f:324.56:
+
+         if (nio.eq.0) write(6,21) (psmax(i),i=1,LDIMT-1)               
+                                                        1
+Warning: DO loop at (1) will be executed zero times
+/projects/p20850/amd616/Nek5000/core/ic.f:341.20:
+
+      do i=1,ldimt-1                                                    
+                    1
+Warning: DO loop at (1) will be executed zero times
+/projects/p20850/amd616/Nek5000/core/ic.f:358.45:
+
+            write(6,18) (psmax(i),i=1,ldimt-1)                          
+                                             1
+Warning: DO loop at (1) will be executed zero times
+/projects/p20850/amd616/Nek5000/core/ic.f:1831.23:
+
+      IFLDW=INDX1(WORK,' ',1)-1                                         
+                       1
+Warning: Character length of actual argument shorter than of dummy argument 's2' (1/132) at (1)
+/projects/p20850/amd616/Nek5000/core/ic.f:1368.20:
+
+      common /ctmp0/  xa(lxyzr)      ,xb(lx1,ly1,lzr) ,xc(lxyzr)        
+                    1
+Warning: Named COMMON block 'ctmp0' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/ic.f:25.20:
+
+      common /ctmp1/ work(lx1,ly1,lz1,lelv)                             
+                    1
+Warning: Named COMMON block 'ctmp1' at (1) shall be of the same size
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/gfldr.f -o obj/gfldr.o
+/projects/p20850/amd616/Nek5000/core/gfldr.f:121.30:
+
+        call gfldr_getfld(pm1,dum,dum,1,ifldpos+1,ifbswp)               
+                              1
+Warning: Rank mismatch in argument 'out2' at (1) (rank-1 and scalar)
+/projects/p20850/amd616/Nek5000/core/gfldr.f:127.39:
+
+        call gfldr_getfld(t(1,1,1,1,1),dum,dum,1,ifldpos+1,ifbswp)      
+                                       1
+Warning: Rank mismatch in argument 'out2' at (1) (rank-1 and scalar)
+/projects/p20850/amd616/Nek5000/core/gfldr.f:132.44:
+
+           call gfldr_getfld(t(1,1,1,1,i+1),dum,dum,1,ifldpos+1,ifbswp) 
+                                            1
+Warning: Rank mismatch in argument 'out2' at (1) (rank-1 and scalar)
+/projects/p20850/amd616/Nek5000/core/gfldr.f:130.22:
+
+      do i = 1,ldimt-1                                                  
+                      1
+Warning: DO loop at (1) will be executed zero times
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/ssolv.f -o obj/ssolv.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/planx.f -o obj/planx.o
+mpif77 -c  -O3 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/math.f -o obj/math.o
+/projects/p20850/amd616/Nek5000/core/math.f:1544.21:
+
+      call sort(xout,work,n)                                            
+                     1
+Warning: Type mismatch in argument 'ind' at (1); passed REAL(8) to INTEGER(4)
+/projects/p20850/amd616/Nek5000/core/ssolv.f:508.20:
+
+      COMMON /SCRUZ/  W1  (LX1,LY1,LZ1,LELV)                            
+                    1
+Warning: Named COMMON block 'scruz' at (1) shall be of the same size
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/mxm_wrapper.f -o obj/mxm_wrapper.o 
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/hmholtz.f -o obj/hmholtz.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/gfdm_par.f -o obj/gfdm_par.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/gfdm_op.f -o obj/gfdm_op.o
+/projects/p20850/amd616/Nek5000/core/hmholtz.f:793.26:
+
+         call axhelm (w,p,h1,h2,imsh,isd)                               
+                          1
+Warning: Actual argument contains too few elements for dummy argument 'helm1' (1/36) at (1)
+/projects/p20850/amd616/Nek5000/core/hmholtz.f:1925.44:
+
+           d(i1,i2, 1,e)=d(i1,i2, 1,e)-2*fw(5,e)*unt(i,5,e)*dzm1( 1, 1) 
+                                            1
+Warning: Array reference at (1) is out of bounds (5 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/hmholtz.f:1926.44:
+
+           d(i1,i2,nx,e)=d(i1,i2,nx,e)-2*fw(6,e)*unt(i,6,e)*dzm1(nx,nx) 
+                                            1
+Warning: Array reference at (1) is out of bounds (6 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/hmholtz.f:1540.24:
+
+      call setprec_dg(d,h1,h2,imsh,1) !  diag preconditioner            
+                        1
+Warning: Actual argument contains too few elements for dummy argument 'h1' (1/36) at (1)
+/projects/p20850/amd616/Nek5000/core/hmholtz.f:2152.13:
+
+     $      ,dxtm1,dym1,dzm1,nx1,ny1,nz1,if3d)                          
+             1
+Warning: Rank mismatch in argument 'drt' at (1) (scalar and rank-2)
+/projects/p20850/amd616/Nek5000/core/hmholtz.f:1590.26:
+
+         call hxdg   (w,p,h1,h2)                                        
+                          1
+Warning: Actual argument contains too few elements for dummy argument 'h1' (1/36) at (1)
+/projects/p20850/amd616/Nek5000/core/hmholtz.f:2044.15:
+
+     $        ,dxtm1,dym1,dzm1,nx1,ny1,nz1,if3d)                        
+               1
+Warning: Rank mismatch in argument 'drt' at (1) (scalar and rank-2)
+/projects/p20850/amd616/Nek5000/core/hmholtz.f:542.20:
+
+      COMMON /CTMP0/ W1   (LX1,LY1,LZ1,LELT)                            
+                    1
+Warning: Named COMMON block 'ctmp0' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/gfdm_op.f:176.43:
+
+      call build_D1d_d(eigv,bw,dglgt,wglgt,wgl,eigs,length,nel,nxv,nxp  
+                                           1
+Warning: Rank mismatch in argument 'wm1' at (1) (rank-1 and scalar)
+/projects/p20850/amd616/Nek5000/core/gfdm_op.f:103.53:
+
+     $                    ,cb0(1),cbn(1),dglgt,wglgt,wgl,bw,lbw)        
+                                                     1
+Warning: Rank mismatch in argument 'wgl' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/gfdm_op.f:118.53:
+
+     $                    ,cb0(2),cbn(2),dglgt,wglgt,wgl,bw,lbw)        
+                                                     1
+Warning: Rank mismatch in argument 'wgl' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/gfdm_op.f:132.56:
+
+     $                       ,cb0(3),cbn(3),dglgt,wglgt,wgl,bw,lbw)     
+                                                        1
+Warning: Rank mismatch in argument 'wgl' at (1) (scalar and rank-1)
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/gfdm_solve.f -o obj/gfdm_solve.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/subs1.f -o obj/subs1.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/subs2.f -o obj/subs2.o
+/projects/p20850/amd616/Nek5000/core/subs1.f:1954.20:
+
+      call axhmsf  (a1,a2,a3,p1,p2,p3,h1,h2,matmod)                     
+                    1
+Warning: Actual argument contains too few elements for dummy argument 'au1' (1/36) at (1)
+/projects/p20850/amd616/Nek5000/core/subs1.f:2000.43:
+
+         call axstrs_nds(a1,a2,a3,w1,w2,w3,h1,h2,matmod,nel)            
+                                           1
+Warning: Rank mismatch in argument 'h1' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/subs1.f:2157.49:
+
+      call get_local_crs_galerkin_strs(a,ncr,nxc,h1,h2,matmod)          
+                                                 1
+Warning: Rank mismatch in argument 'h1' at (1) (rank-1 and scalar)
+/projects/p20850/amd616/Nek5000/core/subs1.f:54.42:
+
+      if (ifcrsl) call set_up_h1_crs_strs(h1,h2,ifield,matmod)          
+                                          1
+Warning: Rank mismatch in argument 'h1' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/subs1.f:108.23:
+
+         call axhmsf  (ap1,ap2,ap3,p1,p2,p3,h1,h2,matmod)               
+                       1
+Warning: Actual argument contains too few elements for dummy argument 'au1' (1/36) at (1)
+/projects/p20850/amd616/Nek5000/core/subs1.f:1767.38:
+
+            call fcsum2(usum_f,asum_f,u,e,f)                            
+                                      1
+Warning: Actual argument contains too few elements for dummy argument 'x' (1/36) at (1)
+/projects/p20850/amd616/Nek5000/core/subs1.f:1943.20:
+
+      call axhmsf  (a1,a2,a3,p1,p2,p3,h1,h2,matmod)                     
+                    1
+Warning: Actual argument contains too few elements for dummy argument 'au1' (1/36) at (1)
+/projects/p20850/amd616/Nek5000/core/subs1.f:474.20:
+
+      common /ctmp0/ x(lx1,ly1,lz1,lelv)                                
+                    1
+Warning: Named COMMON block 'ctmp0' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/subs1.f:471.20:
+
+      common /ctmp1/ u(lx1,ly1,lz1,lelv)                                
+                    1
+Warning: Named COMMON block 'ctmp1' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/subs1.f:1581.20:
+
+      common /ctmp1/ txx(lx1,ly1,lz1,lelt)                              
+                    1
+Warning: Named COMMON block 'ctmp1' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/subs1.f:1522.20:
+
+      common /scrsf/ t11(lx1,ly1,lz1,lelt)                              
+                    1
+Warning: Named COMMON block 'scrsf' at (1) shall be of the same size
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/genbox.f -o obj/genbox.o
+/projects/p20850/amd616/Nek5000/core/subs2.f:44.20:
+
+      common /ctmp0/ exz(lx1,ly1,lz1,lelt)                              
+                    1
+Warning: Named COMMON block 'ctmp0' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/subs2.f:40.20:
+
+      common /ctmp1/ exx(lx1,ly1,lz1,lelt)                              
+                    1
+Warning: Named COMMON block 'ctmp1' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/genbox.f:36.20:
+
+         call getrv(rfld,1,iend,7)                                      
+                    1
+Warning: Rank mismatch in argument 'r' at (1) (rank-1 and scalar)
+/projects/p20850/amd616/Nek5000/core/genbox.f:162.37:
+
+     $                    call getr2(xc,yc,iend,7)                      
+                                     1
+Warning: Rank mismatch in argument 'r1' at (1) (scalar and rank-2)
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/gmres.f -o obj/gmres.o
+/projects/p20850/amd616/Nek5000/core/gmres.f:581.27:
+
+      call dd_swap_vals(v1,v,gsh_dd)                                    
+                           1
+Warning: Actual argument contains too few elements for dummy argument 'v0' (1/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/gmres.f:781.35:
+
+      call set_up_fast_1D_sem_op_a(s,eb0,eb1,l,r,ll,lm,lr,ah)           
+                                   1
+Warning: Actual argument contains too few elements for dummy argument 'g' (1/64) at (1)
+/projects/p20850/amd616/Nek5000/core/gmres.f:783.35:
+
+      call set_up_fast_1D_sem_op_b(g,bb0,bb1,l,r,ll,lm,lr,bh)           
+                                   1
+Warning: Actual argument contains too few elements for dummy argument 'g' (2/64) at (1)
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/hsmg.f -o obj/hsmg.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/convect.f -o obj/convect.o
+/projects/p20850/amd616/Nek5000/core/hsmg.f:490.30:
+
+      call hsmg_schwarz_dssum(mg_work,l)                                
+                              1
+Warning: Rank mismatch in argument 'u' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/hsmg.f:906.24:
+
+      call hsmg_do_fast(e,r,                                            
+                        1
+Warning: Rank mismatch in argument 'e' at (1) (rank-2 and scalar)
+/projects/p20850/amd616/Nek5000/core/hsmg.f:493.31:
+
+      call hsmg_fdm(mg_work(i),mg_work,l) ! Do the local solves         
+                               1
+Warning: Rank mismatch in argument 'r' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/hsmg.f:1272.10:
+
+     $    e,mg_schwarz_wt(mg_schwarz_wt_index(l,mg_fld)),mg_nh(l))      
+          1
+Warning: Rank mismatch in argument 'e' at (1) (rank-3 and scalar)
+/projects/p20850/amd616/Nek5000/core/hsmg.f:1274.10:
+
+     $    e,mg_schwarz_wt(mg_schwarz_wt_index(l,mg_fld)),mg_nh(l))      
+          1
+Warning: Rank mismatch in argument 'e' at (1) (rank-4 and scalar)
+/projects/p20850/amd616/Nek5000/core/hsmg.f:451.31:
+
+      call hsmg_schwarz_wt    (e,l)          ! e  := W e                
+                               1
+Warning: Rank mismatch in argument 'e' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/hsmg.f:547.30:
+
+      call hsmg_schwarz_dssum(mg_work,l)                                
+                              1
+Warning: Rank mismatch in argument 'u' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/hsmg.f:551.31:
+
+      call hsmg_fdm(mg_work(i),mg_work,l)                               
+                               1
+Warning: Rank mismatch in argument 'r' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/hsmg.f:2847.63:
+
+     $            (mg_g(p_g),mg_g(l_g),ng,nx,ny,nz,nxl,nyl,nzl,e,l,w)   
+                                                               1
+Warning: Type mismatch in argument 'e' at (1); passed INTEGER(4) to REAL(8)
+/projects/p20850/amd616/Nek5000/core/hsmg.f:2850.63:
+
+     $            (mg_b(p_b),mg_b(l_b)   ,nx,ny,nz,nxl,nyl,nzl,e,l,w)   
+                                                               1
+Warning: Type mismatch in argument 'e' at (1); passed INTEGER(4) to REAL(8)
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/induct.f -o obj/induct.o
+/projects/p20850/amd616/Nek5000/core/hsmg.f:807.20:
+
+      common /ctmp0/ b(2*lxm*lxm),w(2*lxm*lxm)                          
+                    1
+Warning: Named COMMON block 'ctmp0' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/hsmg.f:2924.20:
+
+      common /ctmp0/ w(100000)                                          
+                    1
+Warning: Named COMMON block 'ctmp0' at (1) shall be of the same size
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/perturb.f -o obj/perturb.o
+/projects/p20850/amd616/Nek5000/core/induct.f:1554.32:
+
+            call intp_rstd(rx(1,5,e),sym1(1,1,1,e),nx1,nxd,if3d,0) ! 0 -
+                                1
+Warning: Array reference at (1) is out of bounds (5 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/induct.f:1555.32:
+
+            call intp_rstd(rx(1,6,e),szm1(1,1,1,e),nx1,nxd,if3d,0) ! 0 -
+                                1
+Warning: Array reference at (1) is out of bounds (6 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/induct.f:1556.32:
+
+            call intp_rstd(rx(1,7,e),txm1(1,1,1,e),nx1,nxd,if3d,0) ! 0 -
+                                1
+Warning: Array reference at (1) is out of bounds (7 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/induct.f:1557.32:
+
+            call intp_rstd(rx(1,8,e),tym1(1,1,1,e),nx1,nxd,if3d,0) ! 0 -
+                                1
+Warning: Array reference at (1) is out of bounds (8 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/induct.f:1558.32:
+
+            call intp_rstd(rx(1,9,e),tzm1(1,1,1,e),nx1,nxd,if3d,0) ! 0 -
+                                1
+Warning: Array reference at (1) is out of bounds (9 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/induct.f:1381.59:
+
+     $            rx(i,4,e)*zm(i,1)+rx(i,5,e)*zm(i,2)+rx(i,6,e)*zm(i,3) 
+                                                           1
+Warning: Array reference at (1) is out of bounds (6 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/induct.f:1381.41:
+
+     $            rx(i,4,e)*zm(i,1)+rx(i,5,e)*zm(i,2)+rx(i,6,e)*zm(i,3) 
+                                         1
+Warning: Array reference at (1) is out of bounds (5 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/induct.f:1383.59:
+
+     $            rx(i,7,e)*zm(i,1)+rx(i,8,e)*zm(i,2)+rx(i,9,e)*zm(i,3) 
+                                                           1
+Warning: Array reference at (1) is out of bounds (9 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/induct.f:1383.41:
+
+     $            rx(i,7,e)*zm(i,1)+rx(i,8,e)*zm(i,2)+rx(i,9,e)*zm(i,3) 
+                                         1
+Warning: Array reference at (1) is out of bounds (8 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/induct.f:1383.23:
+
+     $            rx(i,7,e)*zm(i,1)+rx(i,8,e)*zm(i,2)+rx(i,9,e)*zm(i,3) 
+                       1
+Warning: Array reference at (1) is out of bounds (7 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/induct.f:1410.59:
+
+     $            rx(i,4,e)*zp(i,1)+rx(i,5,e)*zp(i,2)+rx(i,6,e)*zp(i,3) 
+                                                           1
+Warning: Array reference at (1) is out of bounds (6 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/induct.f:1410.41:
+
+     $            rx(i,4,e)*zp(i,1)+rx(i,5,e)*zp(i,2)+rx(i,6,e)*zp(i,3) 
+                                         1
+Warning: Array reference at (1) is out of bounds (5 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/induct.f:1412.59:
+
+     $            rx(i,7,e)*zp(i,1)+rx(i,8,e)*zp(i,2)+rx(i,9,e)*zp(i,3) 
+                                                           1
+Warning: Array reference at (1) is out of bounds (9 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/induct.f:1412.41:
+
+     $            rx(i,7,e)*zp(i,1)+rx(i,8,e)*zp(i,2)+rx(i,9,e)*zp(i,3) 
+                                         1
+Warning: Array reference at (1) is out of bounds (8 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/induct.f:1412.23:
+
+     $            rx(i,7,e)*zp(i,1)+rx(i,8,e)*zp(i,2)+rx(i,9,e)*zp(i,3) 
+                       1
+Warning: Array reference at (1) is out of bounds (7 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/induct.f:902.21:
+
+      call incomprn (vx,vy,vz,pr) ! project U onto div-free space       
+                     1
+Warning: Rank mismatch in argument 'ux' at (1) (scalar and rank-4)
+/projects/p20850/amd616/Nek5000/core/induct.f:913.21:
+
+      call incomprn (bx,by,bz,pm) ! project B onto div-free space       
+                     1
+Warning: Rank mismatch in argument 'ux' at (1) (scalar and rank-4)
+/projects/p20850/amd616/Nek5000/core/induct.f:469.16:
+
+      call curl(lf,b1,b2,b3,.false.,w1,w2)                              
+                1
+Warning: Actual argument contains too few elements for dummy argument 'vort' (36288/54432) at (1)
+/projects/p20850/amd616/Nek5000/core/induct.f:474.35:
+
+         c1 = lf(i,2)*b3(i) - lf(i,3)*b2(i)                             
+                                   1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+/projects/p20850/amd616/Nek5000/core/induct.f:475.19:
+
+         c2 = lf(i,3)*b1(i) - lf(i,1)*b3(i)                             
+                   1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+/projects/p20850/amd616/Nek5000/core/induct.f:479.14:
+
+         lf(i,3) = c3                                                   
+              1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+/projects/p20850/amd616/Nek5000/core/induct.f:1081.40:
+
+     $                         ,vproj(1,5),ivproj(1,5),binvm1)          
+                                        1
+Warning: Array reference at (1) is out of bounds (5 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/induct.f:1085.40:
+
+     $                         ,vproj(1,6),ivproj(1,6),binvm1)          
+                                        1
+Warning: Array reference at (1) is out of bounds (6 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/induct.f:304.20:
+
+      common /scrns/ w1    (lx1,ly1,lz1,lelv)                           
+                    1
+Warning: Named COMMON block 'scrns' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/convect.f:692.55:
+
+         call set_convect_cons(c(ix,1),c(iy,1),c(iz,1),u,v,w)           
+                                                       1
+Warning: Actual argument contains too few elements for dummy argument 'ux' (1/36) at (1)
+/projects/p20850/amd616/Nek5000/core/convect.f:974.59:
+
+              cs(i,e)=rx(i,4,e)*fx(i)+rx(i,5,e)*fy(i)+rx(i,6,e)*fz(i)   
+                                                           1
+Warning: Array reference at (1) is out of bounds (6 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/convect.f:974.43:
+
+              cs(i,e)=rx(i,4,e)*fx(i)+rx(i,5,e)*fy(i)+rx(i,6,e)*fz(i)   
+                                           1
+Warning: Array reference at (1) is out of bounds (5 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/convect.f:975.59:
+
+              ct(i,e)=rx(i,7,e)*fx(i)+rx(i,8,e)*fy(i)+rx(i,9,e)*fz(i)   
+                                                           1
+Warning: Array reference at (1) is out of bounds (9 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/convect.f:975.43:
+
+              ct(i,e)=rx(i,7,e)*fx(i)+rx(i,8,e)*fy(i)+rx(i,9,e)*fz(i)   
+                                           1
+Warning: Array reference at (1) is out of bounds (8 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/convect.f:975.27:
+
+              ct(i,e)=rx(i,7,e)*fx(i)+rx(i,8,e)*fy(i)+rx(i,9,e)*fz(i)   
+                           1
+Warning: Array reference at (1) is out of bounds (7 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/convect.f:694.55:
+
+         call set_convect_new (c(ix,1),c(iy,1),c(iz,1),u,v,w)           
+                                                       1
+Warning: Actual argument contains too few elements for dummy argument 'ux' (1/36) at (1)
+/projects/p20850/amd616/Nek5000/core/convect.f:170.20:
+
+      call int_vel (bmst,tau,bmass,n,nc,cs,nid) ! B(t^n-1)              
+                    1
+Warning: Rank mismatch in argument 'c_t' at (1) (rank-1 and scalar)
+/projects/p20850/amd616/Nek5000/core/convect.f:1849.28:
+
+         call grad_rstd_ta (ud,ur,us,ut,lxd,if3d) ! GL->GL gradt        
+                            1
+Warning: Rank mismatch in argument 'du' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/convect.f:1975.25:
+
+      call full2face(uf ,u )                                            
+                         1
+Warning: Actual argument contains too few elements for dummy argument 'vol_ary' (1/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/convect.f:1737.25:
+
+      call full2face(uf ,u )                                            
+                         1
+Warning: Actual argument contains too few elements for dummy argument 'vol_ary' (1/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/convect.f:1791.26:
+
+      call add_face2full( du , uf)  ! <--- this stmt.                   
+                          1
+Warning: Actual argument contains too few elements for dummy argument 'vol_ary' (1/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/convect.f:1793.26:
+
+      call fbinvert     ( du )      ! Right now works only for undeforme
+                          1
+Warning: Actual argument contains too few elements for dummy argument 'rhs' (1/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/convect.f:299.58:
+
+       if (param(99).eq.1) call conv_rhs_dg         (du,u,c)            
+                                                          1
+Warning: Actual argument contains too few elements for dummy argument 'c' (1/122472) at (1)
+/projects/p20850/amd616/Nek5000/core/convect.f:1534.25:
+
+      call full2face(uf ,u )                                            
+                         1
+Warning: Actual argument contains too few elements for dummy argument 'vol_ary' (1/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/convect.f:1573.26:
+
+      call add_face2full( du , uf)  ! <--- this stmt.                   
+                          1
+Warning: Actual argument contains too few elements for dummy argument 'vol_ary' (1/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/convect.f:1575.26:
+
+      call fbinvert     ( du )      ! Right now works only for undeforme
+                          1
+Warning: Actual argument contains too few elements for dummy argument 'rhs' (1/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/convect.f:212.26:
+
+            call int_vel (bmst,th,bmass,n,nc,cs,nid)   ! B(n-1/2)       
+                          1
+Warning: Rank mismatch in argument 'c_t' at (1) (rank-1 and scalar)
+/projects/p20850/amd616/Nek5000/core/convect.f:227.26:
+
+            call int_vel (bmst,tau1,bmass,n,nc,cs,nid) ! B^-1(n)        
+                          1
+Warning: Rank mismatch in argument 'c_t' at (1) (rank-1 and scalar)
+/projects/p20850/amd616/Nek5000/core/convect.f:127.40:
+
+     $  ,u1,r1,r2,r3,r4,bmsk,bdivw,bdwt,bmass,bmst,bm,bmlag)            
+                                        1
+Warning: Rank mismatch in argument 'bmass' at (1) (scalar and rank-2)
+/projects/p20850/amd616/Nek5000/core/convect.f:777.60:
+
+               tr(i,2)=rx(i,4,e)*fx(i)+rx(i,5,e)*fy(i)+rx(i,6,e)*fz(i)  
+                                                            1
+Warning: Array reference at (1) is out of bounds (6 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/convect.f:777.44:
+
+               tr(i,2)=rx(i,4,e)*fx(i)+rx(i,5,e)*fy(i)+rx(i,6,e)*fz(i)  
+                                            1
+Warning: Array reference at (1) is out of bounds (5 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/convect.f:778.60:
+
+               tr(i,3)=rx(i,7,e)*fx(i)+rx(i,8,e)*fy(i)+rx(i,9,e)*fz(i)  
+                                                            1
+Warning: Array reference at (1) is out of bounds (9 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/convect.f:778.44:
+
+               tr(i,3)=rx(i,7,e)*fx(i)+rx(i,8,e)*fy(i)+rx(i,9,e)*fz(i)  
+                                            1
+Warning: Array reference at (1) is out of bounds (8 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/convect.f:778.28:
+
+               tr(i,3)=rx(i,7,e)*fx(i)+rx(i,8,e)*fy(i)+rx(i,9,e)*fz(i)  
+                            1
+Warning: Array reference at (1) is out of bounds (7 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/convect.f:1885.25:
+
+      call full2face(uf ,u )                                            
+                         1
+Warning: Actual argument contains too few elements for dummy argument 'vol_ary' (1/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/convect.f:1206.20:
+
+      common /ctmp1/ ur(ldd),us(ldd),ut(ldd),ju(ldd),ud(ldd),tu(ldd)    
+                    1
+Warning: Named COMMON block 'ctmp1' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/convect.f:1001.20:
+
+      common /ctmp1/ work(lxyz1,lelt)                                   
+                    1
+Warning: Named COMMON block 'ctmp1' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/convect.f:38.20:
+
+      common /scruz/ cx  (lx1*ly1*lz1*lelt)                             
+                    1
+Warning: Named COMMON block 'scruz' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/perturb.f:366.26:
+
+     $              +rx(i,7,e)*utz(i))                                  
+                          1
+Warning: Array reference at (1) is out of bounds (7 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/perturb.f:364.26:
+
+     $              +rx(i,7,e)*uty(i))+                                 
+                          1
+Warning: Array reference at (1) is out of bounds (7 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/perturb.f:362.26:
+
+     $              +rx(i,7,e)*utx(i))+                                 
+                          1
+Warning: Array reference at (1) is out of bounds (7 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/perturb.f:372.26:
+
+     $              +rx(i,8,e)*utz(i))                                  
+                          1
+Warning: Array reference at (1) is out of bounds (8 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/perturb.f:371.49:
+
+     $              fz(i)*(rx(i,2,e)*urz(i)+rx(i,5,e)*usz(i)            
+                                                 1
+Warning: Array reference at (1) is out of bounds (5 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/perturb.f:370.26:
+
+     $              +rx(i,8,e)*uty(i))+                                 
+                          1
+Warning: Array reference at (1) is out of bounds (8 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/perturb.f:369.49:
+
+     $              fy(i)*(rx(i,2,e)*ury(i)+rx(i,5,e)*usy(i)            
+                                                 1
+Warning: Array reference at (1) is out of bounds (5 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/perturb.f:368.26:
+
+     $              +rx(i,8,e)*utx(i))+                                 
+                          1
+Warning: Array reference at (1) is out of bounds (8 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/perturb.f:367.51:
+
+               uf5(i)=fx(i)*(rx(i,2,e)*urx(i)+rx(i,5,e)*usx(i)          
+                                                   1
+Warning: Array reference at (1) is out of bounds (5 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/perturb.f:378.26:
+
+     $              +rx(i,9,e)*utz(i))                                  
+                          1
+Warning: Array reference at (1) is out of bounds (9 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/perturb.f:377.49:
+
+     $              fz(i)*(rx(i,3,e)*urz(i)+rx(i,6,e)*usz(i)            
+                                                 1
+Warning: Array reference at (1) is out of bounds (6 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/perturb.f:376.26:
+
+     $              +rx(i,9,e)*uty(i))+                                 
+                          1
+Warning: Array reference at (1) is out of bounds (9 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/perturb.f:375.49:
+
+     $              fy(i)*(rx(i,3,e)*ury(i)+rx(i,6,e)*usy(i)            
+                                                 1
+Warning: Array reference at (1) is out of bounds (6 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/perturb.f:374.26:
+
+     $              +rx(i,9,e)*utx(i))+                                 
+                          1
+Warning: Array reference at (1) is out of bounds (9 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/perturb.f:373.51:
+
+               uf6(i)=fx(i)*(rx(i,3,e)*urx(i)+rx(i,6,e)*usx(i)          
+                                                   1
+Warning: Array reference at (1) is out of bounds (6 > 4) in dimension 2
+/projects/p20850/amd616/Nek5000/core/perturb.f:799.20:
+
+      COMMON /SCRNS/ TA (LX1,LY1,LZ1,LELT)                              
+                    1
+Warning: Named COMMON block 'scrns' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/perturb.f:724.20:
+
+      common /scruz/ ta (lx1,ly1,lz1,lelt)                              
+                    1
+Warning: Named COMMON block 'scruz' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/perturb.f:40.20:
+
+      COMMON /SCRNS/  RESV1 (LX1,LY1,LZ1,LELV)                          
+                    1
+Warning: Named COMMON block 'scrns' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/perturb.f:869.20:
+
+      common /scrns/ w1    (lx1,ly1,lz1,lelv)                           
+                    1
+Warning: Named COMMON block 'scrns' at (1) shall be of the same size
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/navier5.f -o obj/navier5.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/navier6.f -o obj/navier6.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/navier7.f -o obj/navier7.o
+/projects/p20850/amd616/Nek5000/core/navier6.f:93.60:
+
+               call set_fem_data_l2(nel_proc,ndom,n_o,x,y,z,tri)        
+                                                            1
+Warning: Type mismatch in argument 'p' at (1); passed INTEGER(4) to REAL(8)
+/projects/p20850/amd616/Nek5000/core/navier6.f:50.20:
+
+      common /ctmp0/ nv_to_t(2*ltotd)                                   
+                    1
+Warning: Named COMMON block 'ctmp0' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/navier7.f:411.38:
+
+         call swap (bcsr(n1),nzero,n2,inverse)                          
+                                      1
+Warning: Type mismatch in argument 'temp' at (1); passed INTEGER(4) to REAL(8)
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/navier8.f -o obj/navier8.o
+/projects/p20850/amd616/Nek5000/core/navier5.f:1243.72:
+
+         do i = 2,ldimt                                                 
+                                                                        1
+Warning: DO loop at (1) will be executed zero times
+/projects/p20850/amd616/Nek5000/core/navier5.f:1254.72:
+
+         do i = 2,ldimt                                                 
+                                                                        1
+Warning: DO loop at (1) will be executed zero times
+/projects/p20850/amd616/Nek5000/core/navier5.f:1376.51:
+
+      call gaujordf  (Lj,nx,nx,indr,indc,ipiv,ierr,rmult)               
+                                                   1
+Warning: Rank mismatch in argument 'rmult' at (1) (rank-1 and scalar)
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/fast3d.f -o obj/fast3d.o
+/projects/p20850/amd616/Nek5000/core/navier5.f:1845.27:
+
+         s21 = sij(j1,j2,1,4,e)                                         
+                           1
+Warning: Array reference at (1) is out of bounds (4 > 3) in dimension 4
+/projects/p20850/amd616/Nek5000/core/navier5.f:1846.27:
+
+         s31 = sij(j1,j2,1,6,e)                                         
+                           1
+Warning: Array reference at (1) is out of bounds (6 > 3) in dimension 4
+/projects/p20850/amd616/Nek5000/core/navier5.f:1848.27:
+
+         s12 = sij(j1,j2,1,4,e)                                         
+                           1
+Warning: Array reference at (1) is out of bounds (4 > 3) in dimension 4
+/projects/p20850/amd616/Nek5000/core/navier5.f:1850.27:
+
+         s32 = sij(j1,j2,1,5,e)                                         
+                           1
+Warning: Array reference at (1) is out of bounds (5 > 3) in dimension 4
+/projects/p20850/amd616/Nek5000/core/navier5.f:1852.27:
+
+         s13 = sij(j1,j2,1,6,e)                                         
+                           1
+Warning: Array reference at (1) is out of bounds (6 > 3) in dimension 4
+/projects/p20850/amd616/Nek5000/core/navier5.f:1853.27:
+
+         s23 = sij(j1,j2,1,5,e)                                         
+                           1
+Warning: Array reference at (1) is out of bounds (5 > 3) in dimension 4
+/projects/p20850/amd616/Nek5000/core/navier5.f:2884.31:
+
+      call y_avg_buff(ur,w ,ut,c2,'ub',icount)                          
+                               1
+Warning: Rank mismatch in argument 'c2' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/navier5.f:2885.31:
+
+      call y_avg_buff(wr,wp,wt,c2,'u2',icount)                          
+                               1
+Warning: Rank mismatch in argument 'c2' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/navier5.f:2892.31:
+
+      call y_avg_buff(wr,wt,wp,c2,'uv',icount)                          
+                               1
+Warning: Rank mismatch in argument 'c2' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/navier5.f:2894.31:
+
+      call y_ins_buff(ur,w ,ut,c2,'ui',icount)                          
+                               1
+Warning: Rank mismatch in argument 'c2' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/navier5.f:2928.31:
+
+      call z_avg_buff(u ,v ,w ,c2,'ub',icount)                          
+                               1
+Warning: Rank mismatch in argument 'c2' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/navier5.f:2929.31:
+
+      call z_avg_buff(wr,wt,wp,c2,'u2',icount)                          
+                               1
+Warning: Rank mismatch in argument 'c2' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/navier5.f:2936.31:
+
+      call z_avg_buff(wr,wt,wp,c2,'uv',icount)                          
+                               1
+Warning: Rank mismatch in argument 'c2' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/navier5.f:2938.31:
+
+      call z_ins_buff(u ,v ,w ,c2,'ui',icount)                          
+                               1
+Warning: Rank mismatch in argument 'c2' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/navier5.f:3081.14:
+
+         xt(l,3) = z(i,j,k)                                             
+              1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+/projects/p20850/amd616/Nek5000/core/navier5.f:3242.30:
+
+            s21 = sij(j1,j2,1,4,e)                                      
+                              1
+Warning: Array reference at (1) is out of bounds (4 > 3) in dimension 4
+/projects/p20850/amd616/Nek5000/core/navier5.f:3243.30:
+
+            s31 = sij(j1,j2,1,6,e)                                      
+                              1
+Warning: Array reference at (1) is out of bounds (6 > 3) in dimension 4
+/projects/p20850/amd616/Nek5000/core/navier5.f:3245.30:
+
+            s12 = sij(j1,j2,1,4,e)                                      
+                              1
+Warning: Array reference at (1) is out of bounds (4 > 3) in dimension 4
+/projects/p20850/amd616/Nek5000/core/navier5.f:3247.30:
+
+            s32 = sij(j1,j2,1,5,e)                                      
+                              1
+Warning: Array reference at (1) is out of bounds (5 > 3) in dimension 4
+/projects/p20850/amd616/Nek5000/core/navier5.f:3249.30:
+
+            s13 = sij(j1,j2,1,6,e)                                      
+                              1
+Warning: Array reference at (1) is out of bounds (6 > 3) in dimension 4
+/projects/p20850/amd616/Nek5000/core/navier5.f:3250.30:
+
+            s23 = sij(j1,j2,1,5,e)                                      
+                              1
+Warning: Array reference at (1) is out of bounds (5 > 3) in dimension 4
+/projects/p20850/amd616/Nek5000/core/navier5.f:3711.34:
+
+      call z_average          (ua,u,w1,w2)                              
+                                  1
+Warning: Rank mismatch in argument 'u' at (1) (rank-4 and scalar)
+/projects/p20850/amd616/Nek5000/core/navier5.f:3712.31:
+
+      call z_average_transpose(u,ua) ! distribute ua to each z-plane    
+                               1
+Warning: Rank mismatch in argument 'u' at (1) (rank-4 and scalar)
+/projects/p20850/amd616/Nek5000/core/navier8.f:1992.33:
+
+      call ituple_sort(tuple,m,n,ky,nk,ind,wtuple)                      
+                                 1
+Warning: Rank mismatch in argument 'key' at (1) (rank-1 and scalar)
+/projects/p20850/amd616/Nek5000/core/navier8.f:16.43:
+
+         call setvert3d(glo_num,ngv,nx,nel,vertex,ifcenter)             
+                                           1
+Warning: Actual argument contains too few elements for dummy argument 'vertex' (1/8) at (1)
+/projects/p20850/amd616/Nek5000/core/navier8.f:18.43:
+
+         call setvert2d(glo_num,ngv,nx,nel,vertex,ifcenter)             
+                                           1
+Warning: Actual argument contains too few elements for dummy argument 'vertex' (1/4) at (1)
+/projects/p20850/amd616/Nek5000/core/navier8.f:1185.29:
+
+      call specmpn(b,nb,a,na,ibat,iba,if3d,w,ldw)                       
+                             1
+Warning: Rank mismatch in argument 'ba' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/navier8.f:52.34:
+
+      call map_f_to_c_l2_bilin(uf,vf,w)                                 
+                                  1
+Warning: Actual argument contains too few elements for dummy argument 'uf' (1/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/navier8.f:1146.29:
+
+      call specmpn(a,na,b,nb,iba,ibat,if3d,w,ldw)                       
+                             1
+Warning: Rank mismatch in argument 'ba' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/navier8.f:54.31:
+
+      call map_c_to_f_l2_bilin(uf,uc,w)                                 
+                               1
+Warning: Actual argument contains too few elements for dummy argument 'uf' (1/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/navier8.f:921.29:
+
+      call specmpn(a,na,b,nb,iba,ibat,if3d,w,ldw)                       
+                             1
+Warning: Rank mismatch in argument 'ba' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/navier8.f:597.26:
+
+            call a_crs_3d(a_loc,h1,h2,x,y,z,ie)                         
+                          1
+Warning: Actual argument contains too few elements for dummy argument 'a' (16/64) at (1)
+/projects/p20850/amd616/Nek5000/core/navier8.f:1361.34:
+
+      call map_f_to_c_h1_bilin(vc,uf)   ! additive Schwarz              
+                                  1
+Warning: Actual argument contains too few elements for dummy argument 'uf' (1/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/navier8.f:1371.31:
+
+      call map_c_to_f_h1_bilin(uf,uc)                                   
+                               1
+Warning: Actual argument contains too few elements for dummy argument 'uf' (1/18144) at (1)
+/projects/p20850/amd616/Nek5000/core/navier8.f:2564.29:
+
+      call specmpn(a,na,b,nb,iba,ibat,if3d,w,ldw)                       
+                             1
+Warning: Rank mismatch in argument 'ba' at (1) (scalar and rank-1)
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/fasts.f -o obj/fasts.o
+/projects/p20850/amd616/Nek5000/core/fast3d.f:553.46:
+
+      call set_up_1D_geom(dx,lbc,rbc,ll,lm,lr,z,nz)                     
+                                              1
+Warning: Actual argument contains too few elements for dummy argument 'z' (1/2) at (1)
+/projects/p20850/amd616/Nek5000/core/fast3d.f:1390.33:
+
+      call set_up_fast_1D_sem_op(s,eb0,eb1,l,r,ll,lm,lr,bh,dgl,0)       
+                                 1
+Warning: Actual argument contains too few elements for dummy argument 'g' (1/36) at (1)
+/projects/p20850/amd616/Nek5000/core/fast3d.f:932.49:
+
+      call set_up_1D_geom_ax(dx,lbc,rbc,ll,lm,lr,z,y,nz)                
+                                                 1
+Warning: Actual argument contains too few elements for dummy argument 'z' (1/2) at (1)
+/projects/p20850/amd616/Nek5000/core/navier8.f:2017.21:
+
+      common  /scrmg/ edge,enum,fnum                                    
+                     1
+Warning: Named COMMON block 'scrmg' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/navier8.f:2022.21:
+
+      common  /scrns/ ind,etuple                                        
+                     1
+Warning: Named COMMON block 'scrns' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/fast3d.f:1585.27:
+
+            llr(e) = l(1,2,2,e)-lmr(e)                                  
+                           1
+Warning: Array reference at (1) is out of bounds (2 > 1) in dimension 3
+/projects/p20850/amd616/Nek5000/core/fast3d.f:1586.27:
+
+            lrr(e) = l(n,2,2,e)-lmr(e)                                  
+                           1
+Warning: Array reference at (1) is out of bounds (2 > 1) in dimension 3
+/projects/p20850/amd616/Nek5000/core/fast3d.f:1587.27:
+
+            lls(e) = l(2,1,2,e)-lms(e)                                  
+                           1
+Warning: Array reference at (1) is out of bounds (2 > 1) in dimension 3
+/projects/p20850/amd616/Nek5000/core/fast3d.f:1588.27:
+
+            lrs(e) = l(2,n,2,e)-lms(e)                                  
+                           1
+Warning: Array reference at (1) is out of bounds (2 > 1) in dimension 3
+/projects/p20850/amd616/Nek5000/core/navier5.f:248.20:
+
+      common /scrns/         pm1(lx1,ly1,lz1,lelv)                      
+                    1
+Warning: Named COMMON block 'scrns' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/navier5.f:2315.21:
+
+      common /scravg/ ua(lt),va(lt),wa(lt),pa(lt)                       
+                     1
+Warning: Named COMMON block 'scravg' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/fasts.f:343.24:
+
+                  l(i,j,2,e)=1                                          
+                        1
+Warning: Array reference at (1) is out of bounds (2 > 1) in dimension 3
+/projects/p20850/amd616/Nek5000/core/fasts.f:384.46:
+
+                  w(i,j,1,3,eb)=1.0/l(i+1,j+1,2,e)                      
+                                              1
+Warning: Array reference at (1) is out of bounds (2 > 1) in dimension 3
+/projects/p20850/amd616/Nek5000/core/navier5.f:4110.20:
+
+      common /ctmp1/ w(lt,lelt),ur(lt),us(lt),ut(lt),w1(2*lt)           
+                    1
+Warning: Named COMMON block 'ctmp1' at (1) shall be of the same size
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/calcz.f -o obj/calcz.o
+mpicc -c  -O2  -DMPI -DUNDERSCORE -DTIMER /projects/p20850/amd616/Nek5000/core/byte.c -o obj/byte.o
+mpicc -c  -O2  -DMPI -DUNDERSCORE -DTIMER /projects/p20850/amd616/Nek5000/core/chelpers.c -o obj/chelpers.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/byte_mpi.f -o obj/byte_mpi.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/postpro.f -o obj/postpro.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/intp_usr.f -o obj/intp_usr.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/cvode_driver.f -o obj/cvode_driver.o
+/projects/p20850/amd616/Nek5000/core/postpro.f:297.21:
+
+            gije(i,k,3) = dj*(                                          
+                     1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 3
+/projects/p20850/amd616/Nek5000/core/postpro.f:588.26:
+
+          call gen_int_gz(j,jt,w,n,z,m)                                 
+                          1
+Warning: Type mismatch in argument 'j' at (1); passed INTEGER(4) to REAL(8)
+/projects/p20850/amd616/Nek5000/core/postpro.f:617.26:
+
+          call gen_int_gz(j,jt,w,n,z,m)                                 
+                          1
+Warning: Type mismatch in argument 'j' at (1); passed INTEGER(4) to REAL(8)
+/projects/p20850/amd616/Nek5000/core/postpro.f:770.25:
+
+                  xyz(li,3,kb) = zm1(1+i*nxs,1+j*nys,1+k*nzs,e)         
+                         1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+/projects/p20850/amd616/Nek5000/core/postpro.f:804.34:
+
+                    buf2(5) = xyz(5,1,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (5 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:805.34:
+
+                    buf2(6) = xyz(6,1,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (6 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:806.34:
+
+                    buf2(7) = xyz(7,1,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (7 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:807.34:
+
+                    buf2(8) = xyz(8,1,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (8 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:814.34:
+
+                    buf2(13)= xyz(5,2,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (5 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:815.34:
+
+                    buf2(14)= xyz(6,2,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (6 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:816.34:
+
+                    buf2(15)= xyz(7,2,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (7 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:817.34:
+
+                    buf2(16)= xyz(8,2,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (8 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:819.36:
+
+                    buf2(17)= xyz(1,3,kb)                               
+                                    1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+/projects/p20850/amd616/Nek5000/core/postpro.f:820.36:
+
+                    buf2(18)= xyz(2,3,kb)                               
+                                    1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+/projects/p20850/amd616/Nek5000/core/postpro.f:821.36:
+
+                    buf2(19)= xyz(3,3,kb)                               
+                                    1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+/projects/p20850/amd616/Nek5000/core/postpro.f:822.36:
+
+                    buf2(20)= xyz(4,3,kb)                               
+                                    1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+/projects/p20850/amd616/Nek5000/core/postpro.f:824.34:
+
+                    buf2(21)= xyz(5,3,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (5 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:824.36:
+
+                    buf2(21)= xyz(5,3,kb)                               
+                                    1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+/projects/p20850/amd616/Nek5000/core/postpro.f:825.34:
+
+                    buf2(22)= xyz(6,3,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (6 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:825.36:
+
+                    buf2(22)= xyz(6,3,kb)                               
+                                    1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+/projects/p20850/amd616/Nek5000/core/postpro.f:826.34:
+
+                    buf2(23)= xyz(7,3,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (7 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:826.36:
+
+                    buf2(23)= xyz(7,3,kb)                               
+                                    1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+/projects/p20850/amd616/Nek5000/core/postpro.f:827.34:
+
+                    buf2(24)= xyz(8,3,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (8 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:827.36:
+
+                    buf2(24)= xyz(8,3,kb)                               
+                                    1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+/projects/p20850/amd616/Nek5000/core/postpro.f:852.34:
+
+                    buf(5)  = xyz(5,1,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (5 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:853.34:
+
+                    buf(6)  = xyz(6,1,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (6 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:854.34:
+
+                    buf(7)  = xyz(7,1,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (7 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:855.34:
+
+                    buf(8)  = xyz(8,1,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (8 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:862.34:
+
+                    buf(13) = xyz(5,2,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (5 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:863.34:
+
+                    buf(14) = xyz(6,2,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (6 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:864.34:
+
+                    buf(15) = xyz(7,2,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (7 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:865.34:
+
+                    buf(16) = xyz(8,2,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (8 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:867.36:
+
+                    buf(17) = xyz(1,3,kb)                               
+                                    1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+/projects/p20850/amd616/Nek5000/core/postpro.f:868.36:
+
+                    buf(18) = xyz(2,3,kb)                               
+                                    1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+/projects/p20850/amd616/Nek5000/core/postpro.f:869.36:
+
+                    buf(19) = xyz(3,3,kb)                               
+                                    1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+/projects/p20850/amd616/Nek5000/core/postpro.f:870.36:
+
+                    buf(20) = xyz(4,3,kb)                               
+                                    1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+/projects/p20850/amd616/Nek5000/core/postpro.f:872.34:
+
+                    buf(21) = xyz(5,3,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (5 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:872.36:
+
+                    buf(21) = xyz(5,3,kb)                               
+                                    1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+/projects/p20850/amd616/Nek5000/core/postpro.f:873.34:
+
+                    buf(22) = xyz(6,3,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (6 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:873.36:
+
+                    buf(22) = xyz(6,3,kb)                               
+                                    1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+/projects/p20850/amd616/Nek5000/core/postpro.f:874.34:
+
+                    buf(23) = xyz(7,3,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (7 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:874.36:
+
+                    buf(23) = xyz(7,3,kb)                               
+                                    1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+/projects/p20850/amd616/Nek5000/core/postpro.f:875.34:
+
+                    buf(24) = xyz(8,3,kb)                               
+                                  1
+Warning: Array reference at (1) is out of bounds (8 > 4) in dimension 1
+/projects/p20850/amd616/Nek5000/core/postpro.f:875.36:
+
+                    buf(24) = xyz(8,3,kb)                               
+                                    1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+/projects/p20850/amd616/Nek5000/core/postpro.f:1212.25:
+
+                  xyz(li,3,kb) = zm1(1+i*nxs,1+j*nys,1+k*nzs,e)         
+                         1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+/projects/p20850/amd616/Nek5000/core/postpro.f:1243.46:
+
+                  write(10,'(4g15.7)')(xyz(ic,3,kb),ic=1,4)             
+                                              1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+/projects/p20850/amd616/Nek5000/core/postpro.f:1247.46:
+
+                  write(10,'(4g15.7)')(xyz(ic,3,kb),ic=5,8)             
+                                              1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 2
+mpicc -c  -O2  -DMPI -DUNDERSCORE -DTIMER /projects/p20850/amd616/Nek5000/core/nek_comm.c -o obj/nek_comm.o
+/projects/p20850/amd616/Nek5000/core/postpro.f:1607.27:
+
+     &                 pts(3,1),ndim,npts)                              
+                           1
+Warning: Array reference at (1) is out of bounds (3 > 2) in dimension 1
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/vprops.f -o obj/vprops.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/makeq_aux.f -o obj/makeq_aux.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/papi.f -o obj/papi.o
+mpif77 -c   -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/3rd_party/nek_in_situ.f -o obj/nek_in_situ.o
+/projects/p20850/amd616/Nek5000/core/papi.f:5.25:
+
+      call getflops_papi(flops,mflops)                                  
+                         1
+Warning: Type mismatch in argument 'flops' at (1); passed INTEGER(8) to REAL(8)
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/readat_new.f -o obj/readat_new.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/reader_re2.f -o obj/reader_re2.o
+/projects/p20850/amd616/Nek5000/core/readat_new.f:239.22:
+
+      do i = 1,ldimt-1                                                  
+                      1
+Warning: DO loop at (1) will be executed zero times
+/projects/p20850/amd616/Nek5000/core/readat_new.f:258.22:
+
+      do i = 1,ldimt-1                                                  
+                      1
+Warning: DO loop at (1) will be executed zero times
+/projects/p20850/amd616/Nek5000/core/readat_new.f:455.22:
+
+      do i = 1,ldimt-1                                                  
+                      1
+Warning: DO loop at (1) will be executed zero times
+/projects/p20850/amd616/Nek5000/core/readat_new.f:472.22:
+
+      do i = 1,ldimt-1                                                  
+                      1
+Warning: DO loop at (1) will be executed zero times
+/projects/p20850/amd616/Nek5000/core/readat_new.f:506.22:
+
+      do i = 1,ldimt-1                                                  
+                      1
+Warning: DO loop at (1) will be executed zero times
+/projects/p20850/amd616/Nek5000/core/readat_new.f:528.22:
+
+      do i = 1,ldimt-1                                                  
+                      1
+Warning: DO loop at (1) will be executed zero times
+/projects/p20850/amd616/Nek5000/core/reader_re2.f:147.20:
+
+      common /ctmp1/  vi                                                
+                    1
+Warning: Named COMMON block 'ctmp1' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/reader_re2.f:144.20:
+
+      common /scrns/  bufr                                              
+                    1
+Warning: Named COMMON block 'scrns' at (1) shall be of the same size
+mpicc  -c  -O2  -DMPI -DUNDERSCORE -DTIMER  /projects/p20850/amd616/Nek5000/core/3rd_party/finiparser.c -o obj/finiparser.o
+mpicc  -c  -O2  -DMPI -DUNDERSCORE -DTIMER  /projects/p20850/amd616/Nek5000/core/3rd_party/iniparser.c -o obj/iniparser.o
+mpicc  -c  -O2  -DMPI -DUNDERSCORE -DTIMER  /projects/p20850/amd616/Nek5000/core/3rd_party/dictionary.c -o obj/dictionary.o
+mpif77 -c  -O3 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/mxm_std.f -o obj/mxm_std.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/comm_mpi.f -o obj/comm_mpi.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/singlmesh.f -o obj/singlmesh.o
+mpif77 -c  -O0 -DMPI -DUNDERSCORE -DTIMER /projects/p20850/amd616/Nek5000/core/3rd_party/blas.f -o obj/blas.o
+/projects/p20850/amd616/Nek5000/core/3rd_party/blas.f:9764.15:
+
+      GO TO IGO,(120,150,180,210)                                       
+               1
+Warning: Deleted feature: Assigned GOTO statement at (1)
+/projects/p20850/amd616/Nek5000/core/3rd_party/blas.f:9770.72:
+
+               ASSIGN 120 TO IGO                                        
+                                                                        1
+Warning: Deleted feature: ASSIGN statement at (1)
+/projects/p20850/amd616/Nek5000/core/3rd_party/blas.f:9782.72:
+
+               ASSIGN 150 TO IGO                                        
+                                                                        1
+Warning: Deleted feature: ASSIGN statement at (1)
+/projects/p20850/amd616/Nek5000/core/3rd_party/blas.f:9795.72:
+
+               ASSIGN 180 TO IGO                                        
+                                                                        1
+Warning: Deleted feature: ASSIGN statement at (1)
+/projects/p20850/amd616/Nek5000/core/3rd_party/blas.f:9806.72:
+
+               ASSIGN 210 TO IGO                                        
+                                                                        1
+Warning: Deleted feature: ASSIGN statement at (1)
+/projects/p20850/amd616/Nek5000/core/3rd_party/blas.f:17277.15:
+
+      GO TO IGO,(120,150,180,210)                                       
+               1
+Warning: Deleted feature: Assigned GOTO statement at (1)
+/projects/p20850/amd616/Nek5000/core/3rd_party/blas.f:17283.72:
+
+               ASSIGN 120 TO IGO                                        
+                                                                        1
+Warning: Deleted feature: ASSIGN statement at (1)
+/projects/p20850/amd616/Nek5000/core/3rd_party/blas.f:17295.72:
+
+               ASSIGN 150 TO IGO                                        
+                                                                        1
+Warning: Deleted feature: ASSIGN statement at (1)
+/projects/p20850/amd616/Nek5000/core/3rd_party/blas.f:17308.72:
+
+               ASSIGN 180 TO IGO                                        
+                                                                        1
+Warning: Deleted feature: ASSIGN statement at (1)
+/projects/p20850/amd616/Nek5000/core/3rd_party/blas.f:17319.72:
+
+               ASSIGN 210 TO IGO                                        
+                                                                        1
+Warning: Deleted feature: ASSIGN statement at (1)
+mpif77 -c  -O0 -DMPI -DUNDERSCORE -DTIMER /projects/p20850/amd616/Nek5000/core/3rd_party/dsygv.f -o obj/dsygv.o
+/projects/p20850/amd616/Nek5000/core/comm_mpi.f:330.17:
+
+      call bcast(item,isize)                                            
+                 1
+Warning: Type mismatch in argument 'buf' at (1); passed INTEGER(4) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/comm_mpi.f:1064.28:
+
+            call crecv(type,w,bytes)                                    
+                            1
+Warning: Type mismatch in argument 'buf' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/comm_mpi.f:1086.38:
+
+      if (nid .ne. 0) call csend(type,x,bytes,parent,nullpid)           
+                                      1
+Warning: Type mismatch in argument 'buf' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/comm_mpi.f:1097.22:
+
+           call csend(typer,x,bytes,jnid,nullpid)                       
+                      1
+Warning: Type mismatch in argument 'mtype' at (1); passed REAL(8) to INTEGER(4)
+/projects/p20850/amd616/Nek5000/core/comm_mpi.f:1099.22:
+
+           call crecv(typer,x,bytes)                                    
+                      1
+Warning: Type mismatch in argument 'mtype' at (1); passed REAL(8) to INTEGER(4)
+/projects/p20850/amd616/Nek5000/core/comm_mpi.f:844.15:
+
+      call gop(tmsg,t1,'+  ',1)                                         
+               1
+Warning: Rank mismatch in argument 'x' at (1) (rank-1 and scalar)
+/projects/p20850/amd616/Nek5000/core/comm_mpi.f:849.24:
+
+         msg  = irecv(1,y,1)                                            
+                        1
+Warning: Type mismatch in argument 'x' at (1); passed REAL(8) to INTEGER(4)
+/projects/p20850/amd616/Nek5000/core/comm_mpi.f:850.22:
+
+         call csend(1,x,1,nodeb,0)   ! Initiate send, to synch.         
+                      1
+Warning: Type mismatch in argument 'buf' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/comm_mpi.f:855.27:
+
+            msg  = irecv(i,y,len)                                       
+                           1
+Warning: Type mismatch in argument 'x' at (1); passed REAL(8) to INTEGER(4)
+/projects/p20850/amd616/Nek5000/core/comm_mpi.f:856.25:
+
+            call csend(i,x,len,nodeb,0)                                 
+                         1
+Warning: Type mismatch in argument 'buf' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/comm_mpi.f:865.22:
+
+         call crecv(1,y,1)           ! Initiate send, to synch.         
+                      1
+Warning: Type mismatch in argument 'buf' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/comm_mpi.f:866.22:
+
+         call csend(1,x,1,nodea,0)                                      
+                      1
+Warning: Type mismatch in argument 'buf' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/comm_mpi.f:870.25:
+
+            call crecv(i,y,len)                                         
+                         1
+Warning: Type mismatch in argument 'buf' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/comm_mpi.f:871.25:
+
+            call csend(i,x,len,nodea,0)                                 
+                         1
+Warning: Type mismatch in argument 'buf' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/comm_mpi.f:879.15:
+
+      call gop(tmsg,t1,'+  ',1)                                         
+               1
+Warning: Rank mismatch in argument 'x' at (1) (rank-1 and scalar)
+/projects/p20850/amd616/Nek5000/core/comm_mpi.f:773.31:
+
+            msg  = irecv(itest,y,1)                                     
+                               1
+Warning: Type mismatch in argument 'x' at (1); passed REAL(8) to INTEGER(4)
+/projects/p20850/amd616/Nek5000/core/comm_mpi.f:774.29:
+
+            call csend(itest,x,1,nodeb,0)   ! Initiate send, to synch.  
+                             1
+Warning: Type mismatch in argument 'buf' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/comm_mpi.f:801.29:
+
+            call crecv(itest,y,1)           ! Initiate send, to synch.  
+                             1
+Warning: Type mismatch in argument 'buf' at (1); passed REAL(8) to REAL(4)
+/projects/p20850/amd616/Nek5000/core/comm_mpi.f:802.29:
+
+            call csend(itest,x,1,nodea,0)                               
+                             1
+Warning: Type mismatch in argument 'buf' at (1); passed REAL(8) to REAL(4)
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/axi -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/short_tests/axi/axi.f  -o obj/axi.o 
+mpif77 -o nek5000 obj/axi.o obj/drive.o obj/drive1.o obj/drive2.o obj/plan5.o obj/plan4.o obj/bdry.o obj/coef.o obj/conduct.o obj/connect1.o obj/connect2.o obj/dssum.o obj/edgec.o obj/eigsolv.o obj/gauss.o obj/genxyz.o obj/navier1.o obj/makeq.o obj/navier0.o obj/navier2.o obj/navier3.o obj/navier4.o obj/prepost.o obj/speclib.o obj/map2.o obj/turb.o obj/mvmesh.o obj/ic.o obj/gfldr.o obj/ssolv.o obj/planx.o obj/math.o obj/mxm_wrapper.o obj/hmholtz.o obj/gfdm_par.o obj/gfdm_op.o obj/gfdm_solve.o obj/subs1.o obj/subs2.o obj/genbox.o obj/gmres.o obj/hsmg.o obj/convect.o obj/induct.o obj/perturb.o obj/navier5.o obj/navier6.o obj/navier7.o obj/navier8.o obj/fast3d.o obj/fasts.o obj/calcz.o obj/byte.o obj/chelpers.o obj/byte_mpi.o obj/postpro.o obj/intp_usr.o obj/cvode_driver.o obj/nek_comm.o obj/vprops.o obj/makeq_aux.o obj/papi.o obj/nek_in_situ.o obj/readat_new.o obj/reader_re2.o obj/finiparser.o obj/iniparser.o obj/dictionary.o obj/mxm_std.o obj/comm_mpi.o obj/singlmesh.o obj/blas.o obj/dsygv.o -L/projects/p20850/amd616/Nek5000/3rd_party/gslib/src -lgs 
+/projects/p20850/amd616/Nek5000/3rd_party/gslib/src/libgs.a(amg.o): In function `comm_bcast.isra.5.constprop.23':
+amg.c:(.text+0x9dc): undefined reference to `ompi_mpi_unsigned_char'
+/projects/p20850/amd616/Nek5000/3rd_party/gslib/src/libgs.a(amg.o): In function `gslibcrs_amg_setup':
+amg.c:(.text+0x3ea0): undefined reference to `ompi_mpi_unsigned_char'
+amg.c:(.text+0x3ef5): undefined reference to `ompi_mpi_unsigned_char'
+amg.c:(.text+0x3fa0): undefined reference to `ompi_mpi_unsigned_char'
+amg.c:(.text+0x3fc8): undefined reference to `ompi_mpi_unsigned_char'
+/projects/p20850/amd616/Nek5000/3rd_party/gslib/src/libgs.a(gs.o):gs.c:(.text+0x2f2): more undefined references to `ompi_mpi_unsigned_char' follow
+/projects/p20850/amd616/Nek5000/3rd_party/gslib/src/libgs.a(gs.o): In function `gs_setup_pick_':
+gs.c:(.text+0x38e6): undefined reference to `MPI_Comm_f2c'
+/projects/p20850/amd616/Nek5000/3rd_party/gslib/src/libgs.a(crystal.o): In function `gslibcrystal_router':
+crystal.c:(.text+0x34d): undefined reference to `ompi_mpi_unsigned_char'
+crystal.c:(.text+0x3ca): undefined reference to `ompi_mpi_unsigned_char'
+crystal.c:(.text+0x4dc): undefined reference to `ompi_mpi_unsigned_char'
+crystal.c:(.text+0x4f7): undefined reference to `ompi_mpi_unsigned_char'
+crystal.c:(.text+0x54d): undefined reference to `ompi_mpi_unsigned_char'
+/projects/p20850/amd616/Nek5000/3rd_party/gslib/src/libgs.a(crystal.o):crystal.c:(.text+0x5a7): more undefined references to `ompi_mpi_unsigned_char' follow
+/projects/p20850/amd616/Nek5000/3rd_party/gslib/src/libgs.a(comm.o): In function `gslibcomm_allreduce':
+comm.c:(.text+0x531): undefined reference to `ompi_mpi_long'
+comm.c:(.text+0x542): undefined reference to `ompi_mpi_op_sum'
+comm.c:(.text+0x560): undefined reference to `ompi_mpi_op_max'
+comm.c:(.text+0x5b6): undefined reference to `ompi_mpi_int'
+comm.c:(.text+0x5be): undefined reference to `ompi_mpi_op_prod'
+comm.c:(.text+0x5c9): undefined reference to `ompi_mpi_float'
+comm.c:(.text+0x5d9): undefined reference to `ompi_mpi_double'
+comm.c:(.text+0x5e9): undefined reference to `ompi_mpi_long_long_int'
+comm.c:(.text+0x5fa): undefined reference to `ompi_mpi_op_min'
+/projects/p20850/amd616/Nek5000/3rd_party/gslib/src/libgs.a(fcrystal.o): In function `crystal_setup_':
+fcrystal.c:(.text+0x68): undefined reference to `MPI_Comm_f2c'
+/projects/p20850/amd616/Nek5000/3rd_party/gslib/src/libgs.a(fcrs.o): In function `crs_setup_':
+fcrs.c:(.text+0x4e): undefined reference to `MPI_Comm_f2c'
+/projects/p20850/amd616/Nek5000/3rd_party/gslib/src/libgs.a(findpts.o): In function `comm_init_check_.constprop.10':
+findpts.c:(.text+0x10ae): undefined reference to `MPI_Comm_f2c'
+/projects/p20850/amd616/Nek5000/3rd_party/gslib/src/libgs.a(xxt.o): In function `comm_send.isra.3':
+xxt.c:(.text+0x1cd): undefined reference to `ompi_mpi_unsigned_char'
+/projects/p20850/amd616/Nek5000/3rd_party/gslib/src/libgs.a(xxt.o): In function `comm_recv.isra.4':
+xxt.c:(.text+0x1f1): undefined reference to `ompi_mpi_unsigned_char'
+/projects/p20850/amd616/Nek5000/3rd_party/gslib/src/libgs.a(xxt.o): In function `apply_QQt':
+xxt.c:(.text+0x320): undefined reference to `ompi_mpi_unsigned_char'
+/projects/p20850/amd616/Nek5000/3rd_party/gslib/src/libgs.a(xxt.o): In function `sum':
+xxt.c:(.text+0x4ef): undefined reference to `ompi_mpi_unsigned_char'
+collect2: ld returned 1 exit status
+make: *** [nek5000] Error 1

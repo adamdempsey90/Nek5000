@@ -1,0 +1,32 @@
+Input .rea / .re2 name:
+ reading axi.rea                                                                         
+Input mesh tolerance (default 0.2):
+NOTE: smaller is better, but generous is more forgiving for bad meshes.
+ reading mesh data ...
+ start locglob_lexico:           4          15          60  0.50000000000000000     
+ locglob:           1           1          60
+ locglob:           2           6          60
+ locglob:           1          24          60
+ locglob:           2          24          60
+ done locglob_lexico:          24          24          60           4
+ start periodic vtx:          15          24
+ done periodic vtx
+ start rec_bisect:          15
+ done:    6.7% 
+ done:   13.3% 
+ done:   20.0% 
+ done:   26.7% 
+ done:   33.3% 
+ done:   40.0% 
+ done:   46.7% 
+ done:   53.3% 
+ done:   60.0% 
+ done:   66.7% 
+ done:   73.3% 
+ done:   80.0% 
+ done:   86.7% 
+ done:   93.3% 
+ done:  100.0% 
+  
+ done rec_bisect
+writing axi.map                                                                         

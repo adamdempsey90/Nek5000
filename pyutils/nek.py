@@ -600,41 +600,45 @@ class Zavg(Parameters):
         return self.plot(q, logx=True, logy=True, **kargs)
 
     def plot(self,q,i=-1,ax=None,fig=None,shift=0,norm=1,logx=False, logy=False,average=False, savefig=None,window=100,**kargs):
-        if ax is None:
+        first = ax is None
+        if first:
             fig,ax = plt.subplots(figsize=(8,6))
-        try:
-            if average:
-                avg,st = window_avg((q-shift)/norm,window)
-                line, = ax.plot(self.z,avg,**kargs)
-                ax.fill_between(self.z, avg-st, avg+st, facecolor=line._color,alpha=.1)
-            else:
-                raise TypeError
-        except TypeError:
-            if i == 'all':
-                i = range(self.nt)
-            try:
-                ax.plot(self.z,(q-shift)/norm,**kargs)
-            except TypeError:
-                try:
-                    dat = getattr(self,q)
-                except AttributeError:
-                    print('{} not a valid choice!'.format(q))
 
-                try:
-                    if average:
-                        ax.plot(self.z, dat[:,i].mean(axis=1),**kargs)
-                    else:
-                        for ii in i:
-                            ax.plot(self.z,(dat[:,ii]-shift)/norm,**kargs)
-                except TypeError:
-                    ax.plot(self.z,(dat[:,i]-shift)/norm,**kargs)
-                ax.set_ylabel(q,fontsize=15)
-        ax.set_xlabel('$z$',fontsize=20)
-        ax.minorticks_on()
-        if logx:
-            ax.set_xscale('log')
-        if logy:
-            ax.set_yscale('log')
+        try:
+            ylbl = q
+            q = getattr(self,q)
+        except AttributeError:
+            print('{} not an attribute!'.format(q))
+            return
+        except TypeError:
+            ylbl=''
+            pass
+
+        if average:
+            avg,st = window_avg((q-shift)/norm,window)
+            line, = ax.plot(self.z,avg,**kargs)
+            ax.fill_between(self.z, avg-st, avg+st, facecolor=line._color,alpha=.1)
+        else:
+            print(i,type(i))
+            if i=='all':
+                i  = range(0,self.nt)
+                print(i,'all')
+            if type(i) == int:
+                i = [i]
+                print('List', i)
+
+            for ii in i:
+                print(ii)
+                ax.plot(self.z,(q[:,ii]-shift)/norm,**kargs)
+
+        if first:
+            ax.set_ylabel(ylbl,fontsize=20)
+            ax.set_xlabel('$z$',fontsize=20)
+            ax.minorticks_on()
+            if logx:
+                ax.set_xscale('log')
+            if logy:
+                ax.set_yscale('log')
         if savefig is not None:
             fig.savefig(savefig)
         return fig,ax

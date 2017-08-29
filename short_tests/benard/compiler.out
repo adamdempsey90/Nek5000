@@ -1,0 +1,18 @@
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/benard -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/drive.f -o obj/drive.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/benard -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/drive1.f -o obj/drive1.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/benard -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/drive2.f -o obj/drive2.o
+Assembler messages:
+Fatal error: can't create obj/drive.o: No such file or directory
+make: *** [obj/drive.o] Error 1
+make: *** Waiting for unfinished jobs....
+Assembler messages:
+Fatal error: can't create obj/drive1.o: No such file or directory
+make: *** [obj/drive1.o] Error 1
+/projects/p20850/amd616/Nek5000/core/drive2.f:1768.36:
+
+         call plan4_vol(vxc,vyc,vzc,prc)                                
+                                    1
+Warning: Actual argument contains too few elements for dummy argument 'prc' (18144/32256) at (1)
+Assembler messages:
+Fatal error: can't create obj/drive2.o: No such file or directory
+make: *** [obj/drive2.o] Error 1

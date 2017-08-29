@@ -1,0 +1,7 @@
+----------------------
+Make genmap...
+----------------------
+make[1]: Entering directory `/projects/p20850/amd616/Nek5000/tools/genmap'
+gfortran -fdefault-real-8 -o /projects/p20850/amd616/Nek5000/bin/genmap genmap.o byte.o  
+make[1]: Leaving directory `/projects/p20850/amd616/Nek5000/tools/genmap'
+

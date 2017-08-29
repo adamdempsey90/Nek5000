@@ -1,0 +1,210 @@
+Input .rea / .re2 name:
+ reading eddy_uv.rea                                                                     
+Input mesh tolerance (default 0.2):
+NOTE: smaller is better, but generous is more forgiving for bad meshes.
+ reading mesh data ...
+ start locglob_lexico:           4         256        1024  0.50000000000000000     
+ locglob:           1           1        1024
+ locglob:           2          17        1024
+ locglob:           1         289        1024
+ locglob:           2         289        1024
+ done locglob_lexico:         289         289        1024           4
+ start periodic vtx:         256         289
+           1 1  3  0  0.00000000E+00        1 shift
+           1 3  3  0  0.00000000E+00        2 shift
+           2 3  3  0  0.00000000E+00        3 shift
+           3 3  3  0  0.00000000E+00        4 shift
+           4 3  3  0  0.00000000E+00        5 shift
+           5 3  3  0  0.00000000E+00        6 shift
+           6 3  3  0  0.00000000E+00        7 shift
+           7 3  3  0  0.00000000E+00        8 shift
+           8 3  3  0  0.00000000E+00        9 shift
+           9 3  3  0  0.00000000E+00       10 shift
+          10 3  3  0  0.00000000E+00       11 shift
+          11 3  3  0  0.00000000E+00       12 shift
+          12 3  3  0  0.00000000E+00       13 shift
+          13 3  3  0  0.00000000E+00       14 shift
+          14 3  3  0  0.00000000E+00       15 shift
+          15 3  3  0  0.00000000E+00       16 shift
+          16 2  3  0  0.00000000E+00       17 shift
+          16 3  3  0  0.00000000E+00       18 shift
+          17 1  3  0  0.00000000E+00       19 shift
+          32 2  3  0  0.00000000E+00       20 shift
+          33 1  3  0  0.00000000E+00       21 shift
+          48 2  3  0  0.00000000E+00       22 shift
+          49 1  3  0  0.00000000E+00       23 shift
+          64 2  3  0  0.00000000E+00       24 shift
+          65 1  3  0  0.00000000E+00       25 shift
+          80 2  3  0  0.00000000E+00       26 shift
+          81 1  3  0  0.00000000E+00       27 shift
+          96 2  3  0  0.00000000E+00       28 shift
+          97 1  3  0  0.00000000E+00       29 shift
+         112 2  3  0  0.00000000E+00       30 shift
+         113 1  3  0  0.00000000E+00       31 shift
+         128 2  3  0  0.00000000E+00       32 shift
+         129 1  3  0  0.00000000E+00       33 shift
+         144 2  3  0  0.00000000E+00       34 shift
+         145 1  3  0  0.00000000E+00       35 shift
+         160 2  3  0  0.00000000E+00       36 shift
+         161 1  3  0  0.00000000E+00       37 shift
+         176 2  3  0  0.00000000E+00       38 shift
+         177 1  3  0  0.00000000E+00       39 shift
+         192 2  3  0  0.00000000E+00       40 shift
+         193 1  3  0  0.00000000E+00       41 shift
+         208 2  3  0  0.00000000E+00       42 shift
+         209 1  3  0  0.00000000E+00       43 shift
+         224 2  3  0  0.00000000E+00       44 shift
+         225 1  3  0  0.00000000E+00       45 shift
+         240 2  3  0  0.00000000E+00       46 shift
+         241 1  3  0  0.00000000E+00       47 shift
+         241 4  3  0  0.00000000E+00       48 shift
+         242 4  3  0  0.00000000E+00       49 shift
+         243 4  3  0  0.00000000E+00       50 shift
+         244 4  3  0  0.00000000E+00       51 shift
+         245 4  3  0  0.00000000E+00       52 shift
+         246 4  3  0  0.00000000E+00       53 shift
+         247 4  3  0  0.00000000E+00       54 shift
+         248 4  3  0  0.00000000E+00       55 shift
+         249 4  3  0  0.00000000E+00       56 shift
+         250 4  3  0  0.00000000E+00       57 shift
+         251 4  3  0  0.00000000E+00       58 shift
+         252 4  3  0  0.00000000E+00       59 shift
+         253 4  3  0  0.00000000E+00       60 shift
+         254 4  3  0  0.00000000E+00       61 shift
+         255 4  3  0  0.00000000E+00       62 shift
+         256 2  3  0  0.00000000E+00       63 shift
+         256 4  3  0  0.00000000E+00       64 shift
+ done periodic vtx
+ start rec_bisect:         256
+ done:    0.4% 
+ done:    0.8% 
+ done:    1.6% 
+ done:    2.3% 
+ done:    3.1% 
+ done:    3.9% 
+ done:    4.7% 
+ done:    5.5% 
+ done:    6.3% 
+ done:    7.0% 
+ done:    7.8% 
+ done:    8.6% 
+ done:    9.4% 
+ done:   10.2% 
+ done:   10.9% 
+ done:   11.7% 
+ done:   12.5% 
+ done:   13.3% 
+ done:   14.1% 
+ done:   14.8% 
+ done:   15.6% 
+ done:   16.4% 
+ done:   17.2% 
+ done:   18.0% 
+ done:   18.8% 
+ done:   19.5% 
+ done:   20.3% 
+ done:   21.1% 
+ done:   21.9% 
+ done:   22.7% 
+ done:   23.4% 
+ done:   24.2% 
+ done:   25.0% 
+ done:   25.8% 
+ done:   26.6% 
+ done:   27.3% 
+ done:   28.1% 
+ done:   28.9% 
+ done:   29.7% 
+ done:   30.5% 
+ done:   31.3% 
+ done:   32.0% 
+ done:   32.8% 
+ done:   33.6% 
+ done:   34.4% 
+ done:   35.2% 
+ done:   35.9% 
+ done:   36.7% 
+ done:   37.5% 
+ done:   38.3% 
+ done:   39.1% 
+ done:   39.8% 
+ done:   40.6% 
+ done:   41.4% 
+ done:   42.2% 
+ done:   43.0% 
+ done:   43.8% 
+ done:   44.5% 
+ done:   45.3% 
+ done:   46.1% 
+ done:   46.9% 
+ done:   47.7% 
+ done:   48.4% 
+ done:   49.2% 
+ done:   50.0% 
+ done:   50.8% 
+ done:   51.6% 
+ done:   52.3% 
+ done:   53.1% 
+ done:   53.9% 
+ done:   54.7% 
+ done:   55.5% 
+ done:   56.3% 
+ done:   57.0% 
+ done:   57.8% 
+ done:   58.6% 
+ done:   59.4% 
+ done:   60.2% 
+ done:   60.9% 
+ done:   61.7% 
+ done:   62.5% 
+ done:   63.3% 
+ done:   64.1% 
+ done:   64.8% 
+ done:   65.6% 
+ done:   66.4% 
+ done:   67.2% 
+ done:   68.0% 
+ done:   68.8% 
+ done:   69.5% 
+ done:   70.3% 
+ done:   71.1% 
+ done:   71.9% 
+ done:   72.7% 
+ done:   73.4% 
+ done:   74.2% 
+ done:   75.0% 
+ done:   75.8% 
+ done:   76.6% 
+ done:   77.3% 
+ done:   78.1% 
+ done:   78.9% 
+ done:   79.7% 
+ done:   80.5% 
+ done:   81.3% 
+ done:   82.0% 
+ done:   82.8% 
+ done:   83.6% 
+ done:   84.4% 
+ done:   85.2% 
+ done:   85.9% 
+ done:   86.7% 
+ done:   87.5% 
+ done:   88.3% 
+ done:   89.1% 
+ done:   89.8% 
+ done:   90.6% 
+ done:   91.4% 
+ done:   92.2% 
+ done:   93.0% 
+ done:   93.8% 
+ done:   94.5% 
+ done:   95.3% 
+ done:   96.1% 
+ done:   96.9% 
+ done:   97.7% 
+ done:   98.4% 
+ done:   99.2% 
+ done:  100.0% 
+  
+ done rec_bisect
+writing eddy_uv.map                                                                     

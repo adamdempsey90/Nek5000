@@ -1,0 +1,114 @@
+makenek - automatic build tool for Nek5000
+generating makefile ...
+‘eddy_uv.usr’ -> ‘eddy_uv.f’
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/eddy -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/drive.f -o obj/drive.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/eddy -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/drive1.f -o obj/drive1.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/eddy -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/drive2.f -o obj/drive2.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/eddy -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/plan5.f -o obj/plan5.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/eddy -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/plan4.f -o obj/plan4.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/eddy -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/bdry.f -o obj/bdry.o
+/projects/p20850/amd616/Nek5000/core/plan4.f:46.20:
+
+         call sumab(vx_e,vx,vxlag,ntot1,ab,nab)                         
+                    1
+Warning: Rank mismatch in argument 'v' at (1) (scalar and rank-1)
+/projects/p20850/amd616/Nek5000/core/plan4.f:47.20:
+
+         call sumab(vy_e,vy,vylag,ntot1,ab,nab)                         
+                    1
+Warning: Rank mismatch in argument 'v' at (1) (scalar and rank-4)
+/projects/p20850/amd616/Nek5000/core/plan4.f:48.30:
+
+         if (if3d) call sumab(vz_e,vz,vzlag,ntot1,ab,nab)               
+                              1
+Warning: Rank mismatch in argument 'v' at (1) (scalar and rank-4)
+/projects/p20850/amd616/Nek5000/core/plan4.f:72.24:
+
+         call crespsp  (respr)                                          
+                        1
+Warning: Actual argument contains too few elements for dummy argument 'respr' (18144/32256) at (1)
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/eddy -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/coef.f -o obj/coef.o
+/projects/p20850/amd616/Nek5000/core/plan4.f:161.20:
+
+      common /scruz/         sij (lx1*ly1*lz1,6,lelv)                   
+                    1
+Warning: Named COMMON block 'scruz' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/plan4.f:21.20:
+
+      COMMON /SCRNS/ RES1  (LX1,LY1,LZ1,LELV)                           
+                    1
+Warning: Named COMMON block 'scrns' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/drive2.f:1768.36:
+
+         call plan4_vol(vxc,vyc,vzc,prc)                                
+                                    1
+Warning: Actual argument contains too few elements for dummy argument 'prc' (18144/32256) at (1)
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/eddy -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/conduct.f -o obj/conduct.o
+/projects/p20850/amd616/Nek5000/core/bdry.f:1883.20:
+
+      COMMON /SCRMG/ V1(LX1,LY1,LZ1,LELV)                               
+                    1
+Warning: Named COMMON block 'scrmg' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/coef.f:1651.22:
+
+      call out_fld_el(x,e,'XQ')                                         
+                      1
+Warning: Actual argument contains too few elements for dummy argument 'x' (1/32256) at (1)
+/projects/p20850/amd616/Nek5000/core/coef.f:1652.22:
+
+      call out_fld_el(y,e,'YQ')                                         
+                      1
+Warning: Actual argument contains too few elements for dummy argument 'x' (1/32256) at (1)
+/projects/p20850/amd616/Nek5000/core/coef.f:1653.22:
+
+      call out_fld_el(z,e,'ZQ')                                         
+                      1
+Warning: Actual argument contains too few elements for dummy argument 'x' (1/32256) at (1)
+/projects/p20850/amd616/Nek5000/core/coef.f:1211.20:
+
+      COMMON /CTMP0/ C  (LX1,LY1,LZ1,LELT)                              
+                    1
+Warning: Named COMMON block 'ctmp0' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/coef.f:1207.20:
+
+      COMMON /CTMP1/ ZSM1(LX1,LY1,LZ1,LELT)                             
+                    1
+Warning: Named COMMON block 'ctmp1' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/bdry.f:611.20:
+
+      COMMON /SCRUZ/ TMP1(LX1,LY1,LZ1,LELV)                             
+                    1
+Warning: Named COMMON block 'scruz' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/conduct.f:601.22:
+
+      call fwght  (qs,mask)  ! qs is work array                         
+                      1
+Warning: Actual argument contains too few elements for dummy argument 'mult' (1/64) at (1)
+/projects/p20850/amd616/Nek5000/core/conduct.f:455.20:
+
+      common /scruz/ ta(lx1,ly1,lz1,lelt)                               
+                    1
+Warning: Named COMMON block 'scruz' at (1) shall be of the same size
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/eddy -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/connect1.f -o obj/connect1.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/eddy -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/connect2.f -o obj/connect2.o
+/projects/p20850/amd616/Nek5000/core/connect2.f:71.34:
+
+                call cscan(string,'MESH DATA',9)                        
+                                  1
+Warning: Character length of actual argument shorter than of dummy argument 'key' (9/132) at (1)
+/projects/p20850/amd616/Nek5000/core/connect2.f:1543.20:
+
+      common /scrns/ tc(lx1,ly1,lz1,lelt),td(lx1,ly1,lz1,lelt)          
+                    1
+Warning: Named COMMON block 'scrns' at (1) shall be of the same size
+/projects/p20850/amd616/Nek5000/core/connect2.f:1773.20:
+
+      COMMON /CTMP0/ VO(LELT),XYZI(3,LELT),CG(3,LELT)                   
+                    1
+Warning: Named COMMON block 'ctmp0' at (1) shall be of the same size
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/eddy -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/dssum.f -o obj/dssum.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/eddy -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/edgec.f -o obj/edgec.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/eddy -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/eigsolv.f -o obj/eigsolv.o
+ojects/p20850/amd616/Nek5000/core/dssum.f -o obj/dssum.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/eddy -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/edgec.f -o obj/edgec.o
+mpif77 -c  -O2 -fdefault-real-8 -fdefault-double-8 -cpp -DMPI -DUNDERSCORE -DTIMER -I/projects/p20850/amd616/Nek5000/short_tests/eddy -I/projects/p20850/amd616/Nek5000/core -I./ /projects/p20850/amd616/Nek5000/core/eigsolv.f -o obj/eigsolv.o
