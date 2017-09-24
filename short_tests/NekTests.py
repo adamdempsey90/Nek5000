@@ -478,7 +478,150 @@ class Eddy_Rich(NekTestCase):
         self.assertAlmostEqualDelayed(yerr, target_val=8.064398E-05, delta=1E-06, label='Y err')
 
         perr = self.get_value_from_log('P err', column=-5, row=-1)
-        self.assertAlmostEqualDelayed(perr, target_val=2.650561E-03, delta=1E-04, label='P err')
+        self.assertAlmostEqualDelayed(perr, target_val=2.272926E-04, delta=1E-04, label='P err')
+
+        self.assertDelayedFailures()
+
+    def tearDown(self):
+        self.move_logs()
+
+# ####################################################################
+#   eddy_neknek: eddy_neknek.rea
+# ####################################################################
+
+class Eddy_Neknek(NekTestCase):
+    example_subdir  = 'eddy_neknek'
+    case_name       = 'eddy_uv'
+
+    def setUp(self):
+
+        self.size_params = dict(
+            ldim='2',
+            lx1='8',
+            lxd='12',
+            lx2='lx1-2',
+            lelg='1000',
+            lpert='1',
+            nsessmax='2',
+        )
+
+        self.build_tools(['genmap'])
+
+    @pn_pn_parallel
+    def test_PnPn_Parallel(self):
+        from lib.nekBinRun import run_neknek
+        from re import sub
+
+        cls = self.__class__
+        cwd = os.path.join(self.examples_root, cls.example_subdir)
+
+        # Tweak the .rea files and run genmap
+        for rea_file in ('inside', 'outside'):
+            rea_path = os.path.join(cwd, rea_file + '.rea')
+            with open(rea_path, 'r') as f:
+                lines = [sub(r'^.*DIVERGENCE$', '      1.0000000E-06     p21 DIVERGENCE', l) for l in f]
+            with open(rea_path, 'w') as f:
+                f.writelines(lines)
+            self.run_genmap(os.path.join(cwd, rea_file),tol='0.2')
+
+        self.size_params['lx2'] = 'lx1'
+        self.config_size()
+        self.build_nek(opts={'PPLIST':'NEKNEK'})
+        run_neknek(
+            cwd = cwd,
+            inside = 'inside',
+            outside = 'outside',
+            np_inside = 1,
+            np_outside = 1,
+            step_limit = 1000,
+            log_suffix = self.log_suffix,
+            verbose = self.verbose,
+        )
+
+        logfile  = os.path.join(cwd, '{inside}{np_in}.{outside}{np_out}.log{sfx}'.format(
+            inside = 'inside',
+            outside = 'outside',
+            np_in = 1,
+            np_out = 1,
+            sfx = self.log_suffix
+        ))
+
+        xerr_inside = self.get_value_from_log('X err  inside', logfile=logfile, column=-7, row=-1)
+        self.assertAlmostEqualDelayed(xerr_inside, target_val=7.163001E-04, delta=1E-05, label='X err  inside')
+
+        xerr_global = self.get_value_from_log('X err   global', logfile=logfile, column=-7, row=-1)
+        self.assertAlmostEqualDelayed(xerr_global, target_val=8.580050E-04, delta=1E-05, label='X err   global')
+
+        xerr_outside = self.get_value_from_log('X err  outside', logfile=logfile, column=-7, row=-1)
+        self.assertAlmostEqualDelayed(xerr_outside, target_val=8.580050E-04, delta=1E-05, label='X err  outside')
+
+        yerr_inside = self.get_value_from_log('Y err  inside', logfile=logfile, column=-7, row=-1)
+        self.assertAlmostEqualDelayed(yerr_inside, target_val=9.012947E-04, delta=1E-05, label='Y err  inside')
+
+        yerr_global = self.get_value_from_log('Y err   global', logfile=logfile, column=-7, row=-1)
+        self.assertAlmostEqualDelayed(yerr_global, target_val=9.877146E-04, delta=1E-05, label='Y err   global')
+
+        yerr_outside = self.get_value_from_log('Y err  outside', logfile=logfile, column=-7, row=-1)
+        self.assertAlmostEqualDelayed(yerr_outside, target_val=9.877146E-04, delta=1E-05, label='Y err  outside')
+
+        self.assertDelayedFailures()
+
+    @pn_pn_2_parallel
+    def test_PnPn2_Parallel(self):
+        from lib.nekBinRun import run_neknek
+        from re import sub
+
+        cls = self.__class__
+        cwd = os.path.join(self.examples_root, cls.example_subdir)
+
+        # Tweak the .rea files and run genmap
+        for rea_file in ('inside', 'outside'):
+            rea_path = os.path.join(cwd, rea_file + '.rea')
+            with open(rea_path, 'r') as f:
+                lines = [sub(r'^.*DIVERGENCE$', '      1.0000000E-11     p21 DIVERGENCE', l) for l in f]
+            with open(rea_path, 'w') as f:
+                f.writelines(lines)
+            self.run_genmap(os.path.join(cwd, rea_file),tol='0.2')
+
+        self.size_params['lx2'] = 'lx1-2'
+        self.config_size()
+        self.build_nek(opts={'PPLIST':'NEKNEK'})
+        run_neknek(
+            cwd = cwd,
+            inside = 'inside',
+            outside = 'outside',
+            np_inside = 1,
+            np_outside = 1,
+            step_limit = 1000,
+            log_suffix = self.log_suffix,
+            verbose = self.verbose,
+        )
+
+        logfile  = os.path.join(cwd, '{inside}{np_in}.{outside}{np_out}.log{sfx}'.format(
+            inside = 'inside',
+            outside = 'outside',
+            np_in = 1,
+            np_out = 1,
+            sfx = self.log_suffix
+        ))
+
+        xerr_inside = self.get_value_from_log('X err  inside', logfile=logfile, column=-7, row=-1)
+        self.assertAlmostEqualDelayed(xerr_inside, target_val=7.431657E-04, delta=1E-04, label='X err  inside')
+
+        xerr_global = self.get_value_from_log('X err   global', logfile=logfile, column=-7, row=-1)
+        self.assertAlmostEqualDelayed(xerr_global, target_val=8.696332E-04, delta=1E-04, label='X err   global')
+
+        xerr_outside = self.get_value_from_log('X err  outside', logfile=logfile, column=-7, row=-1)
+        self.assertAlmostEqualDelayed(xerr_outside, target_val=8.696332E-04, delta=1E-05, label='X err  outside')
+
+        yerr_inside = self.get_value_from_log('Y err  inside', logfile=logfile, column=-7, row=-1)
+        self.assertAlmostEqualDelayed(yerr_inside, target_val=9.250194E-04, delta=1E-04, label='Y err  inside')
+
+        yerr_global = self.get_value_from_log('Y err   global', logfile=logfile, column=-7, row=-1)
+        self.assertAlmostEqualDelayed(yerr_global, target_val=9.878329E-04, delta=1E-04, label='Y err   global')
+
+        yerr_outside = self.get_value_from_log('Y err  outside', logfile=logfile, column=-7, row=-1)
+        self.assertAlmostEqualDelayed(yerr_outside, target_val=9.878329E-04, delta=1E-05, label='Y err  outside')
 
         self.assertDelayedFailures()
 
@@ -640,13 +783,13 @@ class LowMachTest(NekTestCase):
         # self.assertAlmostEqualDelayed(solver_time, target_val=0.1, delta=40, label='total solver time')
 
         gmres = self.get_value_from_log(label='gmres', column=-7)
-        self.assertAlmostEqualDelayed(gmres, target_val=0, delta=100, label='gmres')
+        self.assertAlmostEqualDelayed(gmres, target_val=0, delta=35, label='gmres')
 
         vx = self.get_value_from_log(label='ERROR VX', column=-5, row=-1)
-        self.assertAlmostEqualDelayed(vx, target_val=2.4635E-09, delta=1e-10, label='VX')
+        self.assertAlmostEqualDelayed(vx, target_val=2.6938e-09, delta=1e-10, label='VX')
 
         errt = self.get_value_from_log(label='ERROR T', column=-5, row=-1)
-        self.assertAlmostEqualDelayed(errt, target_val=4.5408E-12, delta=1e-13, label='T')
+        self.assertAlmostEqualDelayed(errt, target_val=4.5532e-12, delta=1e-13, label='T')
 
         qtl = self.get_value_from_log(label='ERROR QTL', column=-5, row=-1)
         self.assertAlmostEqualDelayed(qtl, target_val=2.6557E-06, delta=1e-07, label='QTL')
@@ -661,13 +804,13 @@ class LowMachTest(NekTestCase):
         self.run_nek(step_limit=200)
 
         gmres = self.get_value_from_log(label='gmres', column=-7)
-        self.assertAlmostEqualDelayed(gmres, target_val=0, delta=100, label='gmres')
+        self.assertAlmostEqualDelayed(gmres, target_val=0, delta=35, label='gmres')
 
         vx = self.get_value_from_log(label='ERROR VX', column=-5, row=-1)
-        self.assertAlmostEqualDelayed(vx, target_val=2.4635E-09, delta=1e-10, label='VX')
+        self.assertAlmostEqualDelayed(vx, target_val=2.6938e-09, delta=1e-10, label='VX')
 
         errt = self.get_value_from_log(label='ERROR T', column=-5, row=-1)
-        self.assertAlmostEqualDelayed(errt, target_val=4.5408E-12, delta=1e-13, label='T')
+        self.assertAlmostEqualDelayed(errt, target_val=4.5532e-12, delta=1e-13, label='T')
 
         qtl = self.get_value_from_log(label='ERROR QTL', column=-5, row=-1)
         self.assertAlmostEqualDelayed(qtl, target_val=2.6557E-06, delta=1e-07, label='QTL')
@@ -851,10 +994,10 @@ class ConjHt(NekTestCase):
         self.assertAlmostEqualDelayed(gmres, target_val=0., delta=20., label='gmres')
 
         tmax = self.get_value_from_log('tmax', column=-3, row=-1)
-        self.assertAlmostEqualDelayed(tmax, target_val=1.31208E+01, delta=1E-03, label='tmax')
+        self.assertAlmostEqualDelayed(tmax, target_val=13.109, delta=1E-03, label='tmax')
 
         terr = self.get_value_from_log('tmax', column=-2, row=-1)
-        self.assertAlmostEqualDelayed(terr, target_val=3.11620E-04, delta=1E-04, label='terr')
+        self.assertAlmostEqualDelayed(terr, target_val=2.66077e-04, delta=1E-04, label='terr')
 
         self.assertDelayedFailures()
 
@@ -939,19 +1082,19 @@ class CmtInviscidVortex(NekTestCase):
         self.move_logs()
         
 ####################################################################
-#  channel2D; lin_chan_dir.par, lin_chan_adj.par
+#  dfh_cav; lin_dfh_cav_dir.par, lin_dfh_cav_adj.par
 ####################################################################
-class LinChan_Dir(NekTestCase):
-    example_subdir = 'channel2D'
-    case_name = 'lin_chan_dir'
+class LinCav_Dir(NekTestCase):
+    example_subdir = 'dfh_cav'
+    case_name = 'lin_dfh_cav_dir'
 
     def setUp(self):
         self.size_params = dict(
             ldim      = '2',
-            lx1       = '10',
-            lxd       = '15',
+            lx1       = '9',
+            lxd       = '13',
             lx2       = 'lx1-2',
-            lelg      = '50',
+            lelg      = '500',
             lpelt     = 'lelt',
         )
 
@@ -962,11 +1105,11 @@ class LinChan_Dir(NekTestCase):
     def test_PnPn2_Serial(self):
         self.size_params['lx2'] = 'lx1-2'
         self.config_size()
-        self.build_nek(usr_file='lin_chan')
+        self.build_nek(usr_file='lin_dfh_cav')
         self.run_nek(step_limit=None)
 
         omega = self.get_value_from_log('Energy', column=-3, row=-1)
-        self.assertAlmostEqualDelayed(omega, target_val=-1.2337E-03, delta=2E-06, label='growth rate')
+        self.assertAlmostEqualDelayed(omega, target_val=-7.57304E-03, delta=1E-06, label='growth rate')
 
         self.assertDelayedFailures()
         
@@ -974,28 +1117,28 @@ class LinChan_Dir(NekTestCase):
     def test_PnPn2_Parallel(self):
         self.size_params['lx2'] = 'lx1-2'
         self.config_size()
-        self.build_nek(usr_file='lin_chan')
+        self.build_nek(usr_file='lin_dfh_cav')
         self.run_nek(step_limit=None)  
 
         omega = self.get_value_from_log('Energy', column=-3, row=-1)
-        self.assertAlmostEqualDelayed(omega, target_val=-1.2337E-03, delta=2E-06, label='growth rate')
+        self.assertAlmostEqualDelayed(omega, target_val=-7.57304E-03, delta=1E-06, label='growth rate')
 
         self.assertDelayedFailures()
 
     def tearDown(self):
         self.move_logs()
 
-class LinChan_Adj(NekTestCase):
-    example_subdir = 'channel2D'
-    case_name = 'lin_chan_adj'
+class LinCav_Adj(NekTestCase):
+    example_subdir = 'dfh_cav'
+    case_name = 'lin_dfh_cav_adj'
 
     def setUp(self):
         self.size_params = dict(
             ldim      = '2',
-            lx1       = '10',
-            lxd       = '15',
+            lx1       = '9',
+            lxd       = '13',
             lx2       = 'lx1-2',
-            lelg      = '50',
+            lelg      = '500',
             lpelt     = 'lelt',
         )
 
@@ -1006,11 +1149,11 @@ class LinChan_Adj(NekTestCase):
     def test_PnPn2_Serial(self):
         self.size_params['lx2'] = 'lx1-2'
         self.config_size()
-        self.build_nek(usr_file='lin_chan')
+        self.build_nek(usr_file='lin_dfh_cav')
         self.run_nek(step_limit=None)
 
         omega = self.get_value_from_log('Energy', column=-3, row=-1)
-        self.assertAlmostEqualDelayed(omega, target_val=-1.2337E-03, delta=2E-06, label='growth rate')
+        self.assertAlmostEqualDelayed(omega, target_val=-7.57304E-03, delta=1E-06, label='growth rate')
 
         self.assertDelayedFailures()
         
@@ -1018,11 +1161,11 @@ class LinChan_Adj(NekTestCase):
     def test_PnPn2_Parallel(self):
         self.size_params['lx2'] = 'lx1-2'
         self.config_size()
-        self.build_nek(usr_file='lin_chan')
+        self.build_nek(usr_file='lin_dfh_cav')
         self.run_nek(step_limit=None)  
 
         omega = self.get_value_from_log('Energy', column=-3, row=-1)
-        self.assertAlmostEqualDelayed(omega, target_val=-1.2337E-03, delta=2E-06, label='growth rate')
+        self.assertAlmostEqualDelayed(omega, target_val=-7.57304E-03, delta=1E-06, label='growth rate')
 
         self.assertDelayedFailures()
 

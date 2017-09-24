@@ -13,18 +13,18 @@ c
       logical ifbswap
 
       call setDefaultParam
-
-      call open_re2(ifbswap) ! this will also read the header
-
       if(nid.eq.0) call par_read(ierr)
       call bcast(ierr,isize)
       if(ierr .ne. 0) call exitt
-
       call bcastParam
+
+      call read_re2_hdr(ifbswap)
+
       call chkParam
+
       if (.not.ifgtp) call mapelpr  ! read .map file, est. gllnid, etc.
 
-      call read_re2(ifbswap) ! read .re2 data 
+      call read_re2_data(ifbswap)
 
       call nekgsync()
 
@@ -785,6 +785,12 @@ c           write(6,*)'help:',lelt,lelv,lelgv
    44    format('ERROR: lx1,lx2:',2i4,' lx2 must be lx-2 for IFSPLIT=F')
            call exitt
          endif
+      endif
+
+      if (ifsplit .and. ifuservp) then
+         if(nid.eq.0) write(6,*) 
+     $   'Switch on stress formulation to support PN/PN and IFUSERVP=T' 
+         ifstrs = .true.
       endif
 
       ktest = (lx1-lx1m) + (ly1-ly1m) + (lz1-lz1m)
