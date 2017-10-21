@@ -1,0 +1,15 @@
+RB.rea
+3                      spatial dimension
+2                      number of fields
+#
+#
+#
+#========================================================
+#
+Box_1                         
+-8 -8 -8                nel_1, nel_2, nel_3
+0. 3.  1.                     x0, x1, ratio 
+0. 3.  1.                     y0, y1, ratio
+-1. 2.  1.                     z0, z1, ratio
+P  ,P  ,P  ,P  ,SYM,SYM      (bc's) velocity   
+P  ,P  ,P  ,P  ,t  ,f            (bc's) temperature -- T=? on lower, dT/dz=? on upper 

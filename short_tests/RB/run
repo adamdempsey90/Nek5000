@@ -1,0 +1,15 @@
+#!/bin/bash
+## This line is a comment, the following lines are for Moab
+#MOAB -l nodes=8:ppn=20
+#MOAB -l walltime=48:00:00
+#MOAB -N da300
+#MOAB -j oe
+#MSUB -m abe
+#MSUB -A p20850
+
+##### These are shell commands. Note that all MSUB commands come first.
+cd $PBS_O_WORKDIR
+ulimit -s unlimited
+
+module load mpi/openmpi-1.10.5-intel2015.0
+neklmpi RB 160 

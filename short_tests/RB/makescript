@@ -1,0 +1,4 @@
+#!/bin/bash
+genbox < genboxarg
+cp box.rea RB.rea
+genmap < genmaparg
