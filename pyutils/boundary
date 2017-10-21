@@ -1,0 +1,5 @@
+#!/bin/bash
+
+
+## Dad N^2 a s_top
+python /projects/p20850/amd616/Nek5000/pyutils/boundary.py $1 $2 $3 $4

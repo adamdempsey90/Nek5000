@@ -107,6 +107,7 @@ c
       nhash = nxs*nys*nzs 
       nmax  = 256
 
+
       call findpts_setup(inth_gfldr,nekcomm,np,ndim,
      &                   xm1s,ym1s,zm1s,nxs,nys,nzs,
      &                   nels,nxf,nyf,nzf,bb_t,

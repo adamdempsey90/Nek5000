@@ -2,6 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import quad,cumtrapz
 from scipy.interpolate import interp1d
+import h5py
+import glob
 import copy
 
 
@@ -213,16 +215,55 @@ class History(Parameters):
 
 
 class Tavg(Parameters):
-    cols = ['t','vz2','vp2','KE','enstrophy',
-            'visc_diss_1','visc_diss_2','visc_diss_3',
-            'therm_diss','dTdz','Fk','Fc','Fe',
-            'vrms','Nu','Ftot','dsdz','Re']
-    def __init__(self,directory='',fname = 'fort.50'):
+    cols = ['t',
+        'vx',
+        'vy',
+        'vz',
+        'vx2',
+        'vy2',
+        'vz2',
+        'KE',
+        'dTdz',
+        'T',
+        'T2',
+        'Fk',
+        'Fc',
+        'Fe',
+        'vort',
+        'area',
+        'vortx',
+        'vorty',
+        'visc3',
+        'therm',
+        'P',
+        'dzP',
+        'Pflux',
+        'TdzP',
+        'trip1',
+        'trip2',
+        'rey12',
+        'rey13',
+        'rey23',
+        'vflux',
+        'vflux2',
+        'keflux',
+        'tflux',
+        'thermflux',
+        'Fcflux1',
+        'Fcflux2',
+        'visc1',
+        'visc2']
+#    cols = ['t','vz2','vp2','KE','enstrophy',
+#            'visc_diss_1','visc_diss_2','visc_diss_3',
+#            'therm_diss','dTdz','Fk','Fc','Fe',
+#            'vrms','Nu','Ftot','dsdz','Re']
+    def __init__(self,directory='',fname = 'fort.50',dat = None):
         if len(directory) > 1:
             if directory[-1] != '/':
                 directory += '/'
         try:
-            dat = np.loadtxt(directory + fname)
+            if dat is None:
+                dat = np.loadtxt(directory + fname)
             self.read_nek(directory, dat)
         except FileNotFoundError as e:
             raise e
@@ -235,24 +276,32 @@ class Tavg(Parameters):
            print('File has nothing in it!')
            return None
 
-       self.t = dat[:,0]
-       self.vz2 = dat[:,1]
-       self.vp2 = dat[:,2]
-       self.KE = dat[:,3]
-       self.enstrophy = dat[:,4]
-       self.visc_diss_1 = dat[:,5]
-       self.visc_diss_2 = dat[:,6]
-       self.visc_diss_3 = dat[:,7]
-       self.therm_diss = dat[:,8]
-       self.dTdz = dat[:,9]
-       self.Fk = dat[:,10]
-       self.Fc = dat[:,11]
-       self.Fe = dat[:,12]
-       self.Nu = self.Fc/self.Fk
-       self.Ftot = self.Fk + self.Fc
-       self.dsdz = self.dTdz - self.delad
-       self.vrms = np.sqrt(self.vz2)
-       self.Re = self.vrms/self.nu
+       try:
+           ncut = np.argwhere(np.isnan(dat))[0][0]
+           dat = dat[:ncut,:]
+       except IndexError:
+           pass
+
+       for i,c in enumerate(self.cols):
+           setattr(self,c,dat[:,i])
+    #   self.t = dat[:,0]
+    #   self.vz2 = dat[:,1]
+    #   self.vp2 = dat[:,2]
+    #   self.KE = dat[:,3]
+    #   self.enstrophy = dat[:,4]
+    #   self.visc_diss_1 = dat[:,5]
+    #   self.visc_diss_2 = dat[:,6]
+    #   self.visc_diss_3 = dat[:,7]
+    #   self.therm_diss = dat[:,8]
+    #   self.dTdz = dat[:,9]
+    #   self.Fk = dat[:,10]
+    #   self.Fc = dat[:,11]
+    #   self.Fe = dat[:,12]
+    #   self.Nu = self.Fc/self.Fk
+    #   self.Ftot = self.Fk + self.Fc
+    #   self.dsdz = self.dTdz - self.delad
+    #   self.vrms = np.sqrt(self.vz2)
+    #   self.Re = self.vrms/self.nu
 
     def readh5(self, f):
         for key,val in f.attrs.items():
@@ -287,6 +336,29 @@ class Tavg(Parameters):
             except RuntimeError:
                 print('{} key already created! Skipping...'.format(key))
                 pass
+
+    def econs(self,diff=False,tstart=0,fig=None,ax=None,savefig=None,**kargs):
+        if ax is None:
+            fig,ax = plt.subplots(figsize=(8,6))
+
+
+        ind = np.argwhere(self.t>tstart)
+
+        if diff:
+            ax.plot(self.t[:-1],np.diff(self.KE)/np.diff(self.t),label='$\\Delta KE/\\Delta t$',**kargs)
+            ax.plot(self.t[:-1],self.Fc[:-1]+self.visc3[:-1],label='$Fc-visc$',**kargs)
+        else:
+            ax.plot(self.t[ind],self.KE[ind]-self.KE[ind][0],label='$\\Delta KE$',**kargs)
+            y = cumtrapz(self.Fc+self.visc3,x=self.t,initial=0)
+            ax.plot(self.t[ind],y[ind]-y[ind][0],label='$\\int \\, dt \\, F_c-visc$',**kargs)
+        #ax.plot(self.t,cumtrapz(self.Fc,x=self.t,initial=0),label='$\\int \\, dt \\, F_c$',**kargs)
+        #ax.plot(self.t,cumtrapz(self.visc3,x=self.t,initial=0),label='$\\int \\, dt \\,visc$',**kargs)
+
+        ax.legend(loc='best')
+        ax.set_xlabel('Time')
+        fig.tight_layout()
+        if savefig is not None:
+            fig.savefig(savefig,bbox_inches='tight')
 
     def turb_plot(self,fig=None,ax=None,savefig=None,logx=False,ylims=None,xlims=None,norm=1,**kargs):
         if ax is None:
@@ -362,18 +434,21 @@ class Tavg(Parameters):
         return fig,ax
     def __add__(self,fld):
         newfld = copy.deepcopy(self)
-        newfld.vz2 += fld.vz2
-        newfld.vp2 += fld.vp2
-        newfld.KE += fld.KE
-        newfld.enstrophy += fld.enstrophy
-        newfld.visc_diss_1 += fld.visc_diss_1
-        newfld.visc_diss_2 += fld.visc_diss_2
-        newfld.visc_diss_3 += fld.visc_diss_3
-        newfld.therm_diss += fld.therm_diss
-        newfld.dTdz += fld.dTdz
-        newfld.Fk += fld.Fk
-        newfld.Fc += fld.Fc
-        newfld.Fe += fld.Fe
+
+        for c in self.cols:
+            setattr(newfld,c,getattr(self,c)+getattr(fld,c))
+      #  newfld.vz2 += fld.vz2
+      #  newfld.vp2 += fld.vp2
+      #  newfld.KE += fld.KE
+      #  newfld.enstrophy += fld.enstrophy
+      #  newfld.visc_diss_1 += fld.visc_diss_1
+      #  newfld.visc_diss_2 += fld.visc_diss_2
+      #  newfld.visc_diss_3 += fld.visc_diss_3
+      #  newfld.therm_diss += fld.therm_diss
+      #  newfld.dTdz += fld.dTdz
+      #  newfld.Fk += fld.Fk
+      #  newfld.Fc += fld.Fc
+      #  newfld.Fe += fld.Fe
 
         newfld.Nu = newfld.Fc/newfld.Fk
         newfld.Ftot = newfld.Fk + newfld.Fc
@@ -434,14 +509,30 @@ class Zavg(Parameters):
         if len(directory) > 1:
             if directory[-1] != '/':
                 directory += '/'
+        datflag = True
+        h5flag = False
         try:
             if dat is None:
+                datflag = False
                 dat = np.loadtxt(directory + fname)
             self.read_nek(directory, dat)
         except FileNotFoundError as e:
             raise e
         except Exception:
+            h5flag = True
             self.readh5(fname)
+
+        if h5flag:
+            return
+        if datflag:
+            n = len( glob.glob('temp*.h5')) + 1
+            fname = 'temp{:d}.h5'.format(n)
+        else:
+            fname = fname.split('.dat')[0]+'.h5'
+        with h5py.File(directory + fname,'w') as f:
+            grp = f.create_group('Zavg')
+            self.dump(grp)
+
     def read_nek(self, directory, dat):
         Parameters.__init__(self,directory)
         self.t  = np.unique(dat[:,0])
@@ -453,8 +544,14 @@ class Zavg(Parameters):
         self.nf = nf
         dat = dat.reshape(nt,nz,nf)
         dat = dat[:,:,1:]
-        print(dat.shape)
+
         self.z = dat[0,:,0]
+        try:
+            ncut = np.argwhere(np.isnan(dat))[0][0]
+            dat = dat[:ncut,:,:]
+            self.t = self.t[:ncut]
+        except IndexError:
+            pass
         self.vx = dat[:,:,1].T
         self.vy = dat[:,:,2].T
         self.vz = dat[:,:,3].T
@@ -552,12 +649,13 @@ class Zavg(Parameters):
         #kfunc = interp1d(self.z, self.kap[:0])
         #self.Fconduc = np.array([ quad(kfunc, self.z[0],i)[0] for i in self.z])
     def readh5(self, f):
-        for key,val in f.attrs.items():
-            setattr(self, key,val)
-        names = []
-        f.visit(names.append)
-        for name in names:
-            setattr(self,name,f[name][...])
+        with h5py.File(f,'r') as f:
+            for key,val in f.attrs.items():
+                setattr(self, key,val)
+            names = []
+            f.visit(names.append)
+            for name in names:
+                setattr(self,name,f[name][...])
     def dump(self, f):
         for key,val in self.params.items():
             try:
@@ -583,14 +681,16 @@ class Zavg(Parameters):
             except RuntimeError:
                 print('{} key already created! Skipping...'.format(key))
                 pass
-    def tss(self,ax=None,fig=None,**kargs):
+    def tss(self,a=3.5,ax=None,fig=None,savefig=None,**kargs):
         if ax is None:
             fig,ax= plt.subplots(figsize=(8,6))
 
-        ax.plot(self.t,self.sk.max() - self.sk_t.min(axis=0),'.-')
+        ax.plot(self.t,-2*self.delad*(1-np.log(1+a)/a) - self.s[-1,:],'.-')
         ax.set_xlabel('$t$',fontsize=20)
         ax.set_ylabel('$\\Delta s_{min}$',fontsize=20)
         ax.minorticks_on()
+        if savefig is not None:
+            fig.savefig(savefig)
         return fig,ax
     def semilogx(self,q,**kargs):
         return self.plot(q, logx=True, logy=False, **kargs)
@@ -923,12 +1023,34 @@ def create_h5_dir2(ds, f):
         zavg_down = f.create_group(d + 'Zavg_down')
         zavg_up = f.create_group(d + 'Zavg_up')
 
-        Zavg(directory=d,fname='zavg_down.dat').dump(zavg_down)
-        Zavg(directory=d,fname='zavg_up.dat').dump(zavg_up)
-        Tavg(directory=d,fname='volvg_down.dat').dump(vavg_down)
-        Tavg(directory=d,fname='volvg_up.dat').dump(vavg_up)
-        Tavg(directory=d,fname='volavgR_down.dat').dump(vavg1_down)
-        Tavg(directory=d,fname='volavgR_up.dat').dump(vavg1_up)
+
+        dd = np.loadtxt(d + 'zavg_down.dat')
+        du = np.loadtxt(d + 'zavg_up.dat')
+        vd = np.loadtxt(d + 'volvg_down.dat')
+        vu = np.loadtxt(d + 'volvg_up.dat')
+        vrd = np.loadtxt(d + 'volavgR_down.dat')
+        vru = np.loadtxt(d + 'volavgR_up.dat')
+
+
+        if dd.shape[0] != du.shape[0]:
+            nt = min(dd.shape[0],du.shape[0])
+            dd = dd[:nt,:]
+            du = du[:nt,:]
+        if vd.shape[0] != vu.shape[0]:
+            nt = min(vd.shape[0],vu.shape[0])
+            vd = vd[:nt,:]
+            vu = vu[:nt,:]
+        if vrd.shape[0] != vru.shape[0]:
+            nt = min(vrd.shape[0],vru.shape[0])
+            vrd = vrd[:nt,:]
+            vru = vru[:nt,:]
+
+        Zavg(directory=d,dat = dd).dump(zavg_down)
+        Zavg(directory=d,dat = du).dump(zavg_up)
+        Tavg(directory=d,dat = vd).dump(vavg_down)
+        Tavg(directory=d,dat = vu).dump(vavg_up)
+        Tavg(directory=d,dat = vrd).dump(vavg1_down)
+        Tavg(directory=d,dat = vru).dump(vavg1_up)
 
 
 
@@ -990,6 +1112,51 @@ def find_point(point,mesh):
 
 
 
+
+def loadit(which='zavg'):
+    dd = np.loadtxt('{}_down.dat'.format(which))
+    du = np.loadtxt('{}_up.dat'.format(which))
+
+# check for Nan
+    try:
+        nt = np.argwhere(np.isnan(dd))[0][0]
+    except IndexError:
+        nt = dd.shape[0]
+    try:
+        nt = min(nt,np.argwhere(np.isnan(du))[0][0])
+    except IndexError:
+        pass
+
+    dd = dd[:nt,:]
+    du = du[:nt,:]
+
+
+
+
+    try:
+        dat = dd + du
+    except ValueError:
+        nt = min(dd.shape[0],du.shape[0])
+        dd = dd[:nt,:]
+        du = du[:nt,:]
+
+
+    if which =='zavg':
+        fld_d = Zavg(dat=dd)
+        fld_u = Zavg(dat=du)
+        fd = fld_d.area/(fld_d.area + fld_u.area)
+        fu = fld_u.area/(fld_d.area + fld_u.area)
+        fld = fld_d + fld_u
+    else:
+        dat=dd+du
+        dat[:,0]/=2
+        fld = Tavg(dat=dat)
+        fld_d = Tavg(dat=dd)
+        fld_u = Tavg(dat=du)
+        fd  = .5*np.ones(fld_d.Fc.shape)
+        fu  = .5*np.ones(fld_u.Fc.shape)
+
+    return fld,fld_d,fld_u,fd,fu
 
 
 

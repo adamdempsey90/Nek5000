@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python /projects/p20850/amd616/Nek5000/pyutils/status.py

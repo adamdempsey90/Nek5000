@@ -1,24 +1,24 @@
 import numpy as np
 import matplotlib.pyplot as plt
-execfile('/projects/p20850/amd616/Nek5000/pyutils/nek.py')
+try:
+    execfile('/projects/p20850/amd616/Nek5000/pyutils/nek.py')
+except NameError:
+    with open('/projects/p20850/amd616/Nek5000/pyutils/nek.py') as f:
+        exec(f.read())
 
-dd = np.loadtxt('zavg_down.dat')
-du = np.loadtxt('zavg_up.dat')
-dat = dd + du
-dat[:,0] /= 2
-dat[:,1] /= 2
 
-fld = Zavg(dat=dat)
+fld,_,_,_,_ = loadit()
+print(fld.nt)
 plt.ion()
-fld.tss()
+fld.tss(savefig='tss.png')
 if fld.nt > 50:
-    fld.summary(average=True,window=30)
+    fld.summary(average=True,window=30,savefig='summary.png')
 elif fld.nt > 100:
-    fld.summary(average=True,window=70)
+    fld.summary(average=True,window=70,savefig='summary.png')
 elif fld.nt > 130:
-    fld.summary(average=True,window=100)
+    fld.summary(average=True,window=100,savefig='summary.png')
 else:
-    fld.summary(average=False)
+    fld.summary(average=False,savefig='summary.png')
 plt.show(block=True)
 
 
